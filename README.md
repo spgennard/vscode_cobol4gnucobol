@@ -1,4 +1,4 @@
-# mycobol extending vscode_cobol
+# gnucobol extending vscode_cobol
 
 This is an example extension that extends the [vscode cobol extension](https://github.com/spgennard/vscode_cobol) in order provide some custom syntax for:
 

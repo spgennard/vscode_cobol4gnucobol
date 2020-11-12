@@ -1,25 +1,37 @@
 {
-    "name": "mycobol",
-    "displayName": "MyCOBOL",
-    "description": "Custom COBOL Syntax",
+    "name": "gnucobol",
+    "displayName": "gnucobol",
+    "description": "GnuCOBOL Syntax",
     "version": "0.0.1",
-    "publisher": "unknown",
+    "publisher": "bitlang",
     "engines": {
         "vscode": "^1.31.0"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/spgennard/vscode_custom_cobol"
+        "url": "https://github.com/spgennard/vscode_cobol4gnucobol"
     },
     "categories": [
         "Programming Languages"
     ],
     "contributes": {
+        "languages": [
+            {
+                "id": "GNUCOBOL",
+                "aliases": [
+                    "gnucobol",
+                    "GnuCOBOL"
+                ],
+                "extensions": [
+                ],
+                "configuration": "./gnucobol-configuration.json"
+            }
+        ],
         "grammars": [
 			{
-                "path": "./syntaxes/cobol.tmLanguage.json",
-                "scopeName": "mycobol.injection",
-				"injectTo": ["source.cobol"]
+                "language": "GNUCOBOL",
+                "path": "./syntaxes/gnucobol.tmLanguage.json",
+                "scopeName": "source.gnucobol"
 			}
 		]
     },
