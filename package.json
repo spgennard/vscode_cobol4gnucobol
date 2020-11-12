@@ -1,7 +1,7 @@
 {
     "name": "gnucobol",
-    "displayName": "gnucobol",
-    "description": "GnuCOBOL Syntax",
+    "displayName": "GnuCOBOL",
+    "description": "GnuCOBOL Syntax extension for COBOL",
     "version": "0.0.1",
     "publisher": "bitlang",
     "engines": {
@@ -17,23 +17,209 @@
     "contributes": {
         "languages": [
             {
-                "id": "GNUCOBOL",
+                "id": "GnuCOBOL",
                 "aliases": [
-                    "gnucobol",
-                    "GnuCOBOL"
+                    "GnuCOBOL",
+                    "gnucobol"
                 ],
-                "extensions": [
-                ],
+                "extensions": [],
                 "configuration": "./gnucobol-configuration.json"
+            },
+            {
+                "id": "COBOL_GNU_LISTFILE",
+                "extensions": [],
+                "configuration": "./cobol.configuration.json"
             }
         ],
         "grammars": [
-			{
-                "language": "GNUCOBOL",
-                "path": "./syntaxes/gnucobol.tmLanguage.json",
+            {
+                "language": "GnuCOBOL",
+                "path": "./syntaxes/GnuCOBOL.tmLanguage.json",
                 "scopeName": "source.gnucobol"
-			}
-		]
+            },
+            {
+                "language": "COBOL_GNU_LISTFILE",
+                "scopeName": "source.cobol_gnu_listfile",
+                "path": "./syntaxes/COBOL_gnu_listfile.tmLanguage.json"
+            }
+        ],
+        "problemPatterns": [
+            {
+                "name": "opencobol-cobc",
+                "regexp": "^(.*):(\\d+):\\s([eE]rror|[wW]arning):\\s(.*)$",
+                "file": 1,
+                "line": 2,
+                "severity": 3,
+                "message": 4
+            },
+            {
+                "name": "opencobol-error-cobc",
+                "regexp": "^(.*):(\\d+): ([eE]rror|[fF]ehler|[eE]rrores|[eE]rrores):\\s(.*)$",
+                "file": 1,
+                "line": 2,
+                "message": 4
+            },
+            {
+                "name": "opencobol-warning-cobc",
+                "regexp": "^(.*):(\\d+): ([wW]arning|[wW]arnung|[aA]lerta):\\s(.*)$",
+                "file": 1,
+                "line": 2,
+                "message": 4
+            },
+            {
+                "name": "gnucobol-cobc",
+                "regexp": "^(.*): ?(\\d+): ([eE]rror|[wW]arning): ([^[]*)(\\[(.*)\\])?$",
+                "file": 1,
+                "line": 2,
+                "severity": 3,
+                "message": 4,
+                "code": 6
+            },
+            {
+                "name": "gnucobol3-cobc",
+                "regexp": "^(.*): ?(\\d+): (error|warning): ([^[]*)(\\[(.*)\\])?$",
+                "file": 1,
+                "line": 2,
+                "severity": 3,
+                "message": 4,
+                "code": 6
+            },
+            {
+                "name": "gnucobol-warning-cobc",
+                "regexp": "^(.*): ?(\\d+): ([wW]arning|[wW]arnung|[wW]aarschuwing|[aA]lerta|avertissement|упозорење): ([^[]*)(\\[(.*)\\])?$",
+                "file": 1,
+                "line": 2,
+                "message": 4,
+                "code": 6
+            },
+            {
+                "name": "gnucobol-error-cobc",
+                "regexp": "^(.*): ?(\\d+): *([eE]rror|[fF]ehler|[fF]out||[eE]rrores|[eE]rrores|erreur|грешка): ([^[]*)(\\[(.*)\\])?$",
+                "file": 1,
+                "line": 2,
+                "message": 4,
+                "code": 6
+            },
+            {
+                "name": "gnucobol3-note-cobc",
+                "regexp": "^(.*): ?(\\d+): ([nN]ote|Anmerkung|[nN]ota): ([^[]*)(\\[(.*)\\])?$",
+                "file": 1,
+                "line": 2,
+                "message": 4,
+                "code": 6
+            },
+            {
+                "name": "procobol-preprocessor",
+                "patterns": [
+                    {
+                        "regexp": "^Error at line (\\d+), column (\\d+) in file (.*)$",
+                        "line": 1,
+                        "column": 2,
+                        "file": 3
+                    },
+                    {
+                        "regexp": "^(.*)$"
+                    },
+                    {
+                        "regexp": "^(.*)$"
+                    },
+                    {
+                        "regexp": "^(\\s+\\d+\\s+)?([^:]*):\\s+(.*)$",
+                        "message": 3,
+                        "code": 2
+                    }
+                ]
+            }
+        ],
+        "problemMatchers": [
+            {
+                "name": "gnucobol-cobc",
+                "owner": "cobol",
+                "fileLocation": [
+                    "absolute"
+                ],
+                "pattern": "$gnucobol-cobc",
+                "source": "GnuCOBOL1+2"
+            },
+            {
+                "name": "gnucobol3-cobc",
+                "owner": "cobol",
+                "fileLocation": [
+                    "absolute"
+                ],
+                "pattern": "$gnucobol3-cobc",
+                "source": "GnuCOBOL3"
+            },
+            {
+                "name": "gnucobol3-warning-cobc",
+                "owner": "cobol",
+                "fileLocation": [
+                    "absolute"
+                ],
+                "pattern": "$gnucobol-warning-cobc",
+                "severity": "warning",
+                "source": "GnuCOBOL3"
+            },
+            {
+                "name": "gnucobol3-error-cobc",
+                "owner": "cobol",
+                "fileLocation": [
+                    "absolute"
+                ],
+                "pattern": "$gnucobol-error-cobc",
+                "severity": "error",
+                "source": "GnuCOBOL3"
+            },
+            {
+                "name": "gnucobol3-note-cobc",
+                "owner": "cobol",
+                "fileLocation": [
+                    "absolute"
+                ],
+                "pattern": "$gnucobol3-note-cobc",
+                "severity": "info",
+                "source": "GnuCOBOL3"
+            },
+            {
+                "name": "opencobol-cobc",
+                "owner": "cobol",
+                "fileLocation": [
+                    "absolute"
+                ],
+                "pattern": "$opencobol-cobc",
+                "source": "OpenCOBOL"
+            },
+            {
+                "name": "opencobol-warning-cobc",
+                "owner": "cobol",
+                "fileLocation": [
+                    "absolute"
+                ],
+                "pattern": "$opencobol-warning-cobc",
+                "severity": "warning",
+                "source": "OpenCOBOL"
+            },
+            {
+                "name": "opencobol-error-cobc",
+                "owner": "cobol",
+                "fileLocation": [
+                    "absolute"
+                ],
+                "pattern": "$opencobol-error-cobc",
+                "severity": "error",
+                "source": "OpenCOBOL"
+            },
+            {
+                "name": "procobol-preprocessor",
+                "fileLocation": [
+                    "absolute"
+                ],
+                "pattern": "$procobol-preprocessor",
+                "source": "Pro*COBOL",
+                "owner": "cobol",
+                "severity": "error"
+            }
+        ]
     },
     "extensionDependencies": [
         "bitlang.cobol"
