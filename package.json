@@ -1,0 +1,29 @@
+{
+    "name": "mycobol",
+    "displayName": "MyCOBOL",
+    "description": "Custom COBOL Syntax",
+    "version": "0.0.1",
+    "publisher": "unknown",
+    "engines": {
+        "vscode": "^1.31.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/spgennard/vscode_custom_cobol"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "grammars": [
+			{
+                "path": "./syntaxes/cobol.tmLanguage.json",
+                "scopeName": "mycobol.injection",
+				"injectTo": ["source.cobol"]
+			}
+		]
+    },
+    "extensionDependencies": [
+        "bitlang.cobol"
+    ]
+}

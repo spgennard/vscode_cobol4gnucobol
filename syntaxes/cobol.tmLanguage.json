@@ -1,0 +1,14 @@
+{
+	"scopeName": "mycobol.injection",
+	"injectionSelector": "L:source.cobol",
+	"patterns": [
+		{
+			"match" :"(.*\\$(IF\\sXTOTEMX\\sDEFINED|IF\\sXLSCX\\DEFINED|END).*)",
+			"name" : "comment.block.preprocessor.cobol"
+		},
+		{
+			"match" : "((?i:\\|).*$)",
+			"name" : "comment"
+		}
+	]
+}
