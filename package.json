@@ -45,28 +45,6 @@
         ],
         "problemPatterns": [
             {
-                "name": "opencobol-cobc",
-                "regexp": "^(.*):(\\d+):\\s([eE]rror|[wW]arning):\\s(.*)$",
-                "file": 1,
-                "line": 2,
-                "severity": 3,
-                "message": 4
-            },
-            {
-                "name": "opencobol-error-cobc",
-                "regexp": "^(.*):(\\d+): ([eE]rror|[fF]ehler|[eE]rrores|[eE]rrores):\\s(.*)$",
-                "file": 1,
-                "line": 2,
-                "message": 4
-            },
-            {
-                "name": "opencobol-warning-cobc",
-                "regexp": "^(.*):(\\d+): ([wW]arning|[wW]arnung|[aA]lerta):\\s(.*)$",
-                "file": 1,
-                "line": 2,
-                "message": 4
-            },
-            {
                 "name": "gnucobol-cobc",
                 "regexp": "^(.*): ?(\\d+): ([eE]rror|[wW]arning): ([^[]*)(\\[(.*)\\])?$",
                 "file": 1,
@@ -179,35 +157,6 @@
                 "pattern": "$gnucobol3-note-cobc",
                 "severity": "info",
                 "source": "GnuCOBOL3"
-            },
-            {
-                "name": "opencobol-cobc",
-                "owner": "cobol",
-                "fileLocation": [
-                    "absolute"
-                ],
-                "pattern": "$opencobol-cobc",
-                "source": "OpenCOBOL"
-            },
-            {
-                "name": "opencobol-warning-cobc",
-                "owner": "cobol",
-                "fileLocation": [
-                    "absolute"
-                ],
-                "pattern": "$opencobol-warning-cobc",
-                "severity": "warning",
-                "source": "OpenCOBOL"
-            },
-            {
-                "name": "opencobol-error-cobc",
-                "owner": "cobol",
-                "fileLocation": [
-                    "absolute"
-                ],
-                "pattern": "$opencobol-error-cobc",
-                "severity": "error",
-                "source": "OpenCOBOL"
             },
             {
                 "name": "procobol-preprocessor",
