@@ -2,7 +2,7 @@
     "name": "gnucobol",
     "displayName": "GnuCOBOL",
     "description": "GnuCOBOL Syntax extension for COBOL",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "bitlang",
     "engines": {
         "vscode": "^1.31.0"
