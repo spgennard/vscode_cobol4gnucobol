@@ -2,6 +2,59 @@
 
 This extension contains all the GnuCOBOL language features that were part of the original bitlang.COBOL Extension.
 
+### Task: Single file compile using GnuCOBOL
+
+The example below shows you how you can create a single task to compile one program using the `cobc` command.
+
+This example is for GnuCOBOL 1-2.x, for GnuCOBOL use $gnucobol3-cob
+
+```json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "gnucobol - cobc (single file)",
+            "type": "shell",
+            "command": "cobc",
+            "args": [
+                "-fsyntax-only",
+                "-I${workspaceFolder}\\CopyBooks",
+                "-I${workspaceFolder}\\CopyBooks\\Public",
+                "${file}"
+            ],
+            "problemMatcher" : "$gnucobol-cobc"
+        }
+    ]
+}
+```
+
+### Task: Breakdown of problem matchers
+
+| Product and Version                           | Tools                                                            | Problem matcher(s)                                                     |
+|-----------------------------------------------|------------------------------------------------------------------|------------------------------------------------------------------------|
+| GnuCOBOL 1-2                                  | *cobc*                                                           | $gnucobol-cobc                                                         |
+| GnuCOBOL 3                                    | *cobc*                                                           | $gnucobol3-cobc                                                        |
+| GnuCOBOL 3                                    | *cobc* for warnings/errors/notes                                 | $gnucobol3-warning-cobc + $gnucobol3-error-cobc + $gnucobol3-note-cobc |
+
+
+## Online resources
+
+- Online communities
+   - [GnuCOBOL Community](https://sourceforge.net/p/gnucobol/discussion/)
+ - Stack Overflow topics/tags:
+   - [COBOL](https://stackoverflow.com/questions/tagged/cobol)
+   - [GnuCOBOL](https://stackoverflow.com/questions/tagged/gnucobol)
+ - [COBOL Programming Language Articles on Reddit](https://www.reddit.com/r/cobol/)
+ - [Linkedin Learning COBOL Resources](https://www.linkedin.com/learning/topics/cobol)
+- wikipedia
+  - [COBOL](https://en.wikipedia.org/wiki/COBOL)
+  - [CICS](https://en.wikipedia.org/wiki/CICS)
+
+
+## Shortcuts
+ - [ALT] + [SHIFT] + [G]: Change to GnuCOBOL Syntax
+ - [ALT] + [SHIFT] + [M]: Toggle margins (overrides user/workspace settings)
+
 ## Contributors
 
 I would like to thank the follow contributors for providing patches, fixes, kind words of wisdom and enhancements.
