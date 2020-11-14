@@ -1,8 +1,16 @@
-# GnuCOBOL Extension for the bitlang.COBOL Extension
+# GnuCOBOL Extension
 
-This extension contains all the GnuCOBOL language features that were part of the original bitlang.COBOL Extension.
+This extension contains GnuCOBOL language features that were part of the original bitlang.COBOL Extension.
 
-### Task: Single file compile using GnuCOBOL
+This extension does not provide support for the COBOL language, so you will be required to use another extension to provide support for this.
+
+This might sound odd but it does allow you to use one of the many COBOL extensions now available and use it with any combination of debuggers or code visualizers.
+
+To summarize, this extension provides:
+ - Problem matchers
+ - A derived GnuCOBOL language that injects GnuCOBOL keywords into an existing COBOL syntax.
+
+## Task: Single file compile using GnuCOBOL
 
 The example below shows you how you can create a single task to compile one program using the `cobc` command.
 
@@ -28,7 +36,7 @@ This example is for GnuCOBOL 1-2.x, for GnuCOBOL use $gnucobol3-cob
 }
 ```
 
-### Task: Breakdown of problem matchers
+## Task: Breakdown of problem matchers
 
 | Product and Version                           | Tools                                                            | Problem matcher(s)                                                     |
 |-----------------------------------------------|------------------------------------------------------------------|------------------------------------------------------------------------|
@@ -49,11 +57,6 @@ This example is for GnuCOBOL 1-2.x, for GnuCOBOL use $gnucobol3-cob
 - wikipedia
   - [COBOL](https://en.wikipedia.org/wiki/COBOL)
   - [CICS](https://en.wikipedia.org/wiki/CICS)
-
-
-## Shortcuts
- - [ALT] + [SHIFT] + [G]: Change to GnuCOBOL Syntax
- - [ALT] + [SHIFT] + [M]: Toggle margins (overrides user/workspace settings)
 
 ## Contributors
 
