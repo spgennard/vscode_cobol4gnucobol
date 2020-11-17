@@ -2,7 +2,15 @@
     "name": "gnucobol",
     "displayName": "GnuCOBOL",
     "description": "GnuCOBOL Syntax extension for COBOL",
-    "version": "0.0.6",
+    "author": {
+        "name": "Stephen Gennard",
+        "email": "stephen@gennard.net"
+    },
+    "license": "MIT",
+    "keywords": [
+        "GnuCOBOL"
+    ],
+    "version": "0.0.7",
     "publisher": "bitlang",
     "engines": {
         "vscode": "^1.49.0"
@@ -11,6 +19,7 @@
         "type": "git",
         "url": "https://github.com/spgennard/vscode_cobol4gnucobol"
     },
+    "homepage": "https://spgennard.github.io/vscode_cobol4gnucobol/",
     "categories": [
         "Programming Languages"
     ],
