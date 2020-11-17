@@ -48,6 +48,7 @@ vsce package
 COMMIT_LOG=$(git log -1 --format='%ci %H %s')
 PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
 github-release delete \
+	  --commit main \
 	  --owner=spgennard \
 	  --repo=vscode_cobol4gnucobol \
 	  --tag="$PACKAGE_VERSION" \
@@ -56,6 +57,7 @@ github-release delete \
 
 github-release upload \
   --owner=spgennard \
+  --commit main \
   --repo=vscode_cobol4gnucobol \
   --tag="$PACKAGE_VERSION" \
   --name=$PACKAGE_VERSION \
