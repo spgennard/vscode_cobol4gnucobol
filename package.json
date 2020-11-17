@@ -14,6 +14,8 @@
     "categories": [
         "Programming Languages"
     ],
+    "license": "MIT",
+    "homepage": "https://github.com/spgennard/vscode_cobol4gnucobol",
     "contributes": {
         "languages": [
             {
