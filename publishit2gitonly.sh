@@ -1,8 +1,9 @@
 # exit on error
+set -x
 set -e
 PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
 
-npx git-changelog-command-line --to-ref=refs/heads/main --ignore-commits-without-issue -std -tec "
+npx git-changelog-command-line --to-ref refs/heads/main --ignore-commits-without-issue -std -tec "
 # Changelog
 
 Changelog for {{ownerName}} {{repoName}}.
