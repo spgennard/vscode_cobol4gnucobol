@@ -3,7 +3,7 @@
 
 Changelog for spgennard vscode_cobol4gnucobol.
 
-## Unreleased
+## 0.0.6
 ### GitHub [#2](https://github.com/spgennard/vscode_cobol4gnucobol/issues/2) Please create release with included vsix  
 
 **Add release scripts - Fix #2**
