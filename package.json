@@ -10,7 +10,7 @@
     "keywords": [
         "GnuCOBOL"
     ],
-    "version": "0.0.7",
+    "version": "0.0.8",
     "publisher": "bitlang",
     "engines": {
         "vscode": "^1.49.0"
@@ -37,7 +37,12 @@
             {
                 "id": "COBOL_GNU_LISTFILE",
                 "extensions": [],
-                "configuration": "./cobol.configuration.json"
+                "configuration": "./gnucobol.configuration.json"
+            },
+            {
+                "id": "COBOL_GNU_DUMPFILE",
+                "extensions": [ ".dump"],
+                "configuration": "./gnucobol.configuration.json"
             }
         ],
         "grammars": [
@@ -50,6 +55,11 @@
                 "language": "COBOL_GNU_LISTFILE",
                 "scopeName": "source.cobol_gnu_listfile",
                 "path": "./syntaxes/COBOL_gnu_listfile.tmLanguage.json"
+            },
+            {
+                "language": "COBOL_GNU_DUMPFILE",
+                "scopeName": "source.cobol_gnu_dumpfile",
+                "path": "./syntaxes/COBOL_gnu_dumpfile.tmLanguage.json"
             }
         ],
         "problemPatterns": [
