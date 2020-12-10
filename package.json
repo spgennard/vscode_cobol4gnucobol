@@ -41,7 +41,9 @@
             },
             {
                 "id": "COBOL_GNU_DUMPFILE",
-                "extensions": [ ".dump"],
+                "extensions": [
+                    ".dump"
+                ],
                 "configuration": "./gnucobol.configuration.json"
             }
         ],
