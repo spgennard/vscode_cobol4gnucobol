@@ -10,7 +10,7 @@
     "keywords": [
         "GnuCOBOL"
     ],
-    "version": "0.0.8",
+    "version": "0.1.0",
     "publisher": "bitlang",
     "engines": {
         "vscode": "^1.49.0"
@@ -23,6 +23,12 @@
     "categories": [
         "Programming Languages"
     ],
+    "activationEvents": [
+        "*",
+        "onLanguage:GnuCOBOL",
+        "onCommand:extension.helloWorld"
+    ],
+    "main": "./out/extension.js",
     "contributes": {
         "languages": [
             {
@@ -62,6 +68,74 @@
                 "language": "COBOL_GNU_DUMPFILE",
                 "scopeName": "source.cobol_gnu_dumpfile",
                 "path": "./syntaxes/COBOL_gnu_dumpfile.tmLanguage.json"
+            }
+        ],
+        "commands": [
+           ],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "cobolplugin.move2dd",
+                    "group": "cobolplugin",
+                    "when": "GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL && !editorHasSelection"
+                },
+                {
+                    "command": "cobolplugin.move2ws",
+                    "group": "cobolplugin",
+                    "when": "GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL && !editorHasSelection"
+                },
+                {
+                    "command": "cobolplugin.move2pd",
+                    "group": "cobolplugin",
+                    "when": "GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL && !editorHasSelection"
+                },
+                {
+                    "command": "cobolplugin.move2anyforward",
+                    "group": "cobolplugin",
+                    "when": "GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL && !editorHasSelection"
+                },
+                {
+                    "command": "cobolplugin.move2anybackwards",
+                    "group": "cobolplugin",
+                    "when": "GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL && !editorHasSelection"
+                }
+            ]
+        },
+        "keybindings": [
+            {
+                "key": "ctrl+alt+p",
+                "command": "cobolplugin.move2pd",
+                "when": "GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL"
+            },
+            {
+                "key": "ctrl+alt+w",
+                "command": "cobolplugin.move2ws",
+                "when": "GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL"
+            },
+            {
+                "key": "ctrl+alt+d",
+                "command": "cobolplugin.move2dd",
+                "when": "GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL"
+            },
+            {
+                "key": "ctrl+alt+.",
+                "command": "cobolplugin.move2anyforward",
+                "when": "GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL"
+            },
+            {
+                "key": "ctrl+alt+,",
+                "command": "cobolplugin.move2anybackwards",
+                "when": "GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL"
+            },
+            {
+                "key": "tab",
+                "command": "cobolplugin.tab",
+                "when": "GnuCOBOL:activateOnBitlangExt && editorLangId == GnuCOBOL && !inSnippetMode"
+            },
+            {
+                "key": "shift+tab",
+                "command": "cobolplugin.revtab",
+                "when": "GnuCOBOL:activateOnBitlangExt && editorLangId == GnuCOBOL && !inSnippetMode"
             }
         ],
         "problemPatterns": [
@@ -192,9 +266,12 @@
         ]
     },
     "scripts": {
-        "compile": "tsc -b",
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
         "test-compile": "tsc -p ./",
-        "test": "node ./out/test/runTest.js"
+        "test": "node ./out/test/runTest.js",
+        "lint": "eslint . --ext .ts,.tsx",
+        "watch": "tsc -watch -p ./"
     },
     "devDependencies": {
         "@types/glob": "^7.1.3",
