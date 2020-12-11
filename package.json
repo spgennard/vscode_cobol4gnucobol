@@ -24,9 +24,9 @@
         "Programming Languages"
     ],
     "activationEvents": [
-        "*",
-        "onLanguage:GnuCOBOL",
-        "onCommand:extension.helloWorld"
+        "onFileSystem:file",
+        "onLanguage:plaintext",
+        "onLanguage:GnuCOBOL"
     ],
     "main": "./out/extension.js",
     "contributes": {
@@ -70,8 +70,7 @@
                 "path": "./syntaxes/COBOL_gnu_dumpfile.tmLanguage.json"
             }
         ],
-        "commands": [
-           ],
+        "commands": [],
         "menus": {
             "editor/context": [
                 {
