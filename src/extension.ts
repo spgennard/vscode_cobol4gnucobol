@@ -1,7 +1,8 @@
 import * as vscode from 'vscode';
-import { extensions, OutputChannel, TextDocument, window, workspace } from 'vscode';
+import { extensions, languages, OutputChannel, TextDocument, window, workspace } from 'vscode';
 import util from 'util';
 import os from 'os';
+import { DumpFileSymbolProvider } from './dumpFileSymbolProvider';
 
 const COBOLOutputChannel: OutputChannel = window.createOutputChannel("GnuCOBOL");
 
@@ -46,6 +47,11 @@ export function activate(context: vscode.ExtensionContext) {
 		flip_plaintext(workspace.textDocuments[docid]);
 	}
 
+	const dumpfileSelector = [
+        { scheme: 'file', language: 'COBOL_GNU_DUMPFILE' }
+    ];
+	const dumpfileSymbolProvider = new DumpFileSymbolProvider();
+	context.subscriptions.push(languages.registerDocumentSymbolProvider(dumpfileSelector, dumpfileSymbolProvider));
 	COBOLOutputChannel.clear();
 
 	const thisExtension = extensions.getExtension("bitlang.gnucobol");
