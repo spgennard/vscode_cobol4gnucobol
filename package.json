@@ -29,7 +29,7 @@
         "onLanguage:GnuCOBOL"
     ],
     "main": "./out/extension.js",
-    "icon": "./gnucobol.png",
+    "icon": "gnucobol.png",
     "contributes": {
         "languages": [
             {
