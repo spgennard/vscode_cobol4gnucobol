@@ -19,6 +19,18 @@ function logMessage(message: string, ...parameters: any[]): void {
 }
 
 function flip_plaintext(doc: TextDocument) {
+	const editorConfig = workspace.getConfiguration('gnucobol');
+	const prefer_gnucobol_syntax = editorConfig.get<boolean>('prefer_gnucobol_syntax', true);
+
+	if (prefer_gnucobol_syntax) {
+		switch(doc.languageId) {
+			case 'cobol' :
+			case 'COBOL' :
+				vscode.languages.setTextDocumentLanguage(doc, "GnuCOBOL");
+				return;
+		}
+	}
+
 	if (doc.languageId === 'plaintext' || doc.languageId === 'tsql') {  // one tsql ext grabs .lst!
 		const lcount = doc.lineCount;
 		if (lcount >= 2) {

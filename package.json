@@ -10,7 +10,7 @@
     "keywords": [
         "GnuCOBOL"
     ],
-    "version": "0.1.4",
+    "version": "0.1.5",
     "publisher": "bitlang",
     "engines": {
         "vscode": "^1.49.0"
@@ -31,6 +31,18 @@
     "main": "./out/extension.js",
     "icon": "gnucobol.png",
     "contributes": {
+        "configuration" : {
+            "type" : "object",
+            "title" : "GnuCOBOL",
+            "properties": {
+                "gnucobol.prefer_gnucobol_syntax": {
+                    "type": "boolean",
+                    "title": "When enabled, default to using GnuCOBOL syntax",
+                    "description": "When enabled, default to using GnuCOBOL syntax",
+                    "default": true
+                  }              
+            }
+        },
         "languages": [
             {
                 "id": "GnuCOBOL",
