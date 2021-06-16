@@ -21,7 +21,7 @@ This example is for GnuCOBOL 1-2.x, for GnuCOBOL use $gnucobol3-cob
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "gnucobol - cobc (single file)",
+            "label": "Compile: cobc (single file)",
             "type": "shell",
             "command": "cobc",
             "args": [
