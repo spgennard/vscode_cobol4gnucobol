@@ -10,7 +10,7 @@
     "keywords": [
         "GnuCOBOL"
     ],
-    "version": "0.5.0",
+    "version": "0.6.5",
     "publisher": "bitlang",
     "engines": {
         "vscode": "^1.49.0"
@@ -31,8 +31,7 @@
     "main": "./out/extension.js",
     "icon": "gnucobol.png",
     "contributes": {
-        "configuration": {
-        },
+        "configuration": {},
         "languages": [
             {
                 "id": "GnuCOBOL",
@@ -62,7 +61,7 @@
                     ".wks",
                     ".bib",
                     ".pco"
-                  ],
+                ],
                 "configuration": "./gnucobol-configuration.json"
             },
             {
@@ -96,10 +95,25 @@
             }
         ],
         "commands": [],
-        "menus": {
+        "configurationDefaults": {
+            "[GnuCOBOL]": {
+                "editor.semanticHighlighting.enabled": false,
+                "editor.insertSpaces": true,
+                "editor.renderIndentGuides": false,
+                "files.autoGuessEncoding": false,
+                "editor.autoIndent": "full",
+                "editor.formatOnType": false,
+                "editor.rulers": [
+                    6,
+                    7,
+                    72
+                ],
+                "editor.detectIndentation": false,
+                "editor.wordSeparators": "`~!#$%^&*()=+[{]}\\|;:'\",.<>/?"
+            }
         },
-        "keybindings": [
-        ],
+        "menus": {},
+        "keybindings": [],
         "problemPatterns": [
             {
                 "name": "gnucobol-cobc",
