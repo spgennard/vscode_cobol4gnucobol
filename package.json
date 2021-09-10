@@ -97,70 +97,8 @@
         ],
         "commands": [],
         "menus": {
-            "editor/context": [
-                {
-                    "command": "cobolplugin.move2dd",
-                    "group": "cobolplugin",
-                    "when": "extension == bitlang.cobol && GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL && !editorHasSelection"
-                },
-                {
-                    "command": "cobolplugin.move2ws",
-                    "group": "cobolplugin",
-                    "when": "extension == bitlang.cobol && GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL && !editorHasSelection"
-                },
-                {
-                    "command": "cobolplugin.move2pd",
-                    "group": "cobolplugin",
-                    "when": "extension == bitlang.cobol && GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL && !editorHasSelection"
-                },
-                {
-                    "command": "cobolplugin.move2anyforward",
-                    "group": "cobolplugin",
-                    "when": "extension == bitlang.cobol && GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL && !editorHasSelection"
-                },
-                {
-                    "command": "cobolplugin.move2anybackwards",
-                    "group": "cobolplugin",
-                    "when": "extension == bitlang.cobol && GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL && !editorHasSelection"
-                }
-            ]
         },
         "keybindings": [
-            {
-                "key": "ctrl+alt+p",
-                "command": "cobolplugin.move2pd",
-                "when": "GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL"
-            },
-            {
-                "key": "ctrl+alt+w",
-                "command": "cobolplugin.move2ws",
-                "when": "GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL"
-            },
-            {
-                "key": "ctrl+alt+d",
-                "command": "cobolplugin.move2dd",
-                "when": "GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL"
-            },
-            {
-                "key": "ctrl+alt+.",
-                "command": "cobolplugin.move2anyforward",
-                "when": "GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL"
-            },
-            {
-                "key": "ctrl+alt+,",
-                "command": "cobolplugin.move2anybackwards",
-                "when": "GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL"
-            },
-            {
-                "key": "tab",
-                "command": "cobolplugin.tab",
-                "when": "GnuCOBOL:activateOnBitlangExt && editorLangId == GnuCOBOL && !inSnippetMode"
-            },
-            {
-                "key": "shift+tab",
-                "command": "cobolplugin.revtab",
-                "when": "GnuCOBOL:activateOnBitlangExt && editorLangId == GnuCOBOL && !inSnippetMode"
-            }
         ],
         "problemPatterns": [
             {
