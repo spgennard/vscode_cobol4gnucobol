@@ -5,7 +5,7 @@
   "patterns": [
     {
       "match": "(\\f)",
-      "name": "strong comment.line.form_feed.cobol_gnu_dumpfile"
+      "name": "strong comment.line.form_feed.gnucobol_dumpfile"
     },
     {
       "match": "(^\\*.*$)",
@@ -13,14 +13,14 @@
     },
     {
       "begin": "((?i:^WORKING-STORAGE|^LINKAGE|^FD))",
-      "name": "constant.numeric.cobol_gnu_dumpfile",
+      "name": "constant.numeric.gnucobol_dumpfile",
       "patterns": [
         {
           "match": "(^\\*.*$)",
           "name": "comment.line.modern"
         },
         {
-          "include": "source.genericCOBOL"
+          "include": "source.gnucobol"
         }
       ],
       "end": "(?=(?i:LINKAGE|END\\s+OF\\s+DUMP))"
@@ -30,5 +30,5 @@
       "name": ""
     }
   ],
-  "scopeName": "source.cobol_gnu_dumpfile"
+  "scopeName": "source.gnucobol_dumpfile"
 }

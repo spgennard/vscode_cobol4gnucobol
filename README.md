@@ -1,14 +1,11 @@
 # GnuCOBOL Extension
 
-This extension contains GnuCOBOL language features that were part of the original bitlang.COBOL Extension.
-
-This extension does not provide support for the COBOL language, so you will be required to use another extension to provide support for this.
-
-This might sound odd but it does allow you to use one of the many COBOL extensions now available and use it with any combination of debuggers or code visualizers.
+This extension provide support for the GnuCOBOL language.
 
 To summarize, this extension provides:
- - Problem matchers
- - A derived GnuCOBOL language that injects GnuCOBOL keywords into an existing COBOL syntax.
+
+- Problem matchers
+- A derived GnuCOBOL language that injects GnuCOBOL keywords into an existing COBOL syntax.
 
 ## Task: Single file compile using GnuCOBOL
 
@@ -44,7 +41,6 @@ This example is for GnuCOBOL 1-2.x, for GnuCOBOL use $gnucobol3-cob
 | GnuCOBOL 3                                    | *cobc*                                                           | $gnucobol3-cobc                                                        |
 | GnuCOBOL 3                                    | *cobc* for warnings/errors/notes                                 | $gnucobol3-warning-cobc + $gnucobol3-error-cobc + $gnucobol3-note-cobc |
 
-
 ## Online resources
 
 - Online communities
@@ -62,5 +58,5 @@ This example is for GnuCOBOL 1-2.x, for GnuCOBOL use $gnucobol3-cob
 
 I would like to thank the follow contributors for providing patches, fixes, kind words of wisdom and enhancements.
 
- - Kevin Abel of Lincoln, NE, USA
- - Simon Sobisch of Germany
+- Kevin Abel of Lincoln, NE, USA
+- Simon Sobisch of Germany
