@@ -13,7 +13,7 @@
     "version": "0.6.5",
     "publisher": "bitlang",
     "engines": {
-        "vscode": "^1.49.0"
+        "vscode": "^1.60.0"
     },
     "repository": {
         "type": "git",
