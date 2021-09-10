@@ -1,15 +1,1 @@
-
-# Changelog
-
-Changelog for spgennard vscode_cobol4gnucobol.
-
-## 0.0.6
-### GitHub [#2](https://github.com/spgennard/vscode_cobol4gnucobol/issues/2) Please create release with included vsix  
-
-**Add release scripts - Fix #2**
-
-
-[2dbaf2884cbd10e](https://github.com/spgennard/vscode_cobol4gnucobol/commit/2dbaf2884cbd10e) *2020-11-17 18:58:33*
-
-
-
+\n# Changelog\n\nChangelog for spgennard vscode_cobol4gnucobol.\n\n\n## 0.0.6\n \n  \n   \n### GitHub [#2](https://github.com/spgennard/vscode_cobol4gnucobol/issues/2) Please create release with included vsix  \n   \n   \n  \n  \n\n  \n**Add release scripts - Fix #2**\n\n\n\n[2dbaf2884cbd10e](https://github.com/spgennard/vscode_cobol4gnucobol/commit/2dbaf2884cbd10e) *2020-11-17 18:58:33*\n\n  \n\n \n\n
