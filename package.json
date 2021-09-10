@@ -10,7 +10,7 @@
     "keywords": [
         "GnuCOBOL"
     ],
-    "version": "0.2.0",
+    "version": "0.3.0",
     "publisher": "bitlang",
     "engines": {
         "vscode": "^1.49.0"
@@ -32,25 +32,42 @@
     "icon": "gnucobol.png",
     "contributes": {
         "configuration": {
-            "type": "object",
-            "title": "GnuCOBOL",
-            "properties": {
-                "gnucobol.prefer_gnucobol_syntax": {
-                    "type": "boolean",
-                    "title": "When enabled, default to using GnuCOBOL syntax",
-                    "description": "When enabled, default to using GnuCOBOL syntax",
-                    "default": true
-                }
-            }
         },
         "languages": [
+            {
+                "id": "GenericCOBOL",
+                "extensions": [],
+                "configuration": "./gnucobol-configuration.json"       
+            },
             {
                 "id": "GnuCOBOL",
                 "aliases": [
                     "GnuCOBOL",
                     "gnucobol"
                 ],
-                "extensions": [],
+                "extensions": [
+                    ".cobol",
+                    ".cbl",
+                    ".cblsrce",
+                    ".lks",
+                    ".pdv",
+                    ".cpy",
+                    ".copybook",
+                    ".cobcopy",
+                    ".fd",
+                    ".sel",
+                    ".scb",
+                    ".spb",
+                    ".scbl",
+                    ".cob",
+                    ".dds",
+                    ".def",
+                    ".src",
+                    ".ss",
+                    ".wks",
+                    ".bib",
+                    ".pco"
+                  ],
                 "configuration": "./gnucobol-configuration.json"
             },
             {
@@ -67,6 +84,11 @@
             }
         ],
         "grammars": [
+            {
+                "language": "GenericCOBOL",
+                "path": "./syntaxes/GenericCOBOL.tmLanguage.json",
+                "scopeName": "source.genericCOBOL"
+            },
             {
                 "language": "GnuCOBOL",
                 "path": "./syntaxes/GnuCOBOL.tmLanguage.json",
@@ -89,27 +111,27 @@
                 {
                     "command": "cobolplugin.move2dd",
                     "group": "cobolplugin",
-                    "when": "GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL && !editorHasSelection"
+                    "when": "extension == bitlang.cobol && GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL && !editorHasSelection"
                 },
                 {
                     "command": "cobolplugin.move2ws",
                     "group": "cobolplugin",
-                    "when": "GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL && !editorHasSelection"
+                    "when": "extension == bitlang.cobol && GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL && !editorHasSelection"
                 },
                 {
                     "command": "cobolplugin.move2pd",
                     "group": "cobolplugin",
-                    "when": "GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL && !editorHasSelection"
+                    "when": "extension == bitlang.cobol && GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL && !editorHasSelection"
                 },
                 {
                     "command": "cobolplugin.move2anyforward",
                     "group": "cobolplugin",
-                    "when": "GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL && !editorHasSelection"
+                    "when": "extension == bitlang.cobol && GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL && !editorHasSelection"
                 },
                 {
                     "command": "cobolplugin.move2anybackwards",
                     "group": "cobolplugin",
-                    "when": "GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL && !editorHasSelection"
+                    "when": "extension == bitlang.cobol && GnuCOBOL:activateOnBitlangExt && editorTextFocus && editorLangId == GnuCOBOL && !editorHasSelection"
                 }
             ]
         },
@@ -277,11 +299,11 @@
             }
         ]
     },
- 	"capabilities": {
-		"untrustedWorkspaces": {
-			"supported": true
-		}
-	},
+    "capabilities": {
+        "untrustedWorkspaces": {
+            "supported": true
+        }
+    },
     "scripts": {
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",

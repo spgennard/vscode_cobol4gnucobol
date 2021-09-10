@@ -69,7 +69,7 @@
       "name": "constant.numeric.cobol_gnu_listfile",
       "patterns": [
         {
-          "include": "source.cobol"
+          "include": "source.genericCOBOL"
         }
       ],
       "end": "($)"

@@ -20,7 +20,7 @@
           "name": "comment.line.modern"
         },
         {
-          "include": "source.cobol"
+          "include": "source.genericCOBOL"
         }
       ],
       "end": "(?=(?i:LINKAGE|END\\s+OF\\s+DUMP))"

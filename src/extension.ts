@@ -19,19 +19,6 @@ function logMessage(message: string, ...parameters: any[]): void {
 }
 
 function flip_plaintext(doc: TextDocument) {
-	const editorConfig = workspace.getConfiguration('gnucobol');
-	const prefer_gnucobol_syntax = editorConfig.get<boolean>('prefer_gnucobol_syntax', true);
-
-	if (prefer_gnucobol_syntax) {
-		switch(doc.languageId) {
-			case 'COBOLIT':
-			case 'cobol' :
-			case 'COBOL' :
-				vscode.languages.setTextDocumentLanguage(doc, "GnuCOBOL");
-				return;
-		}
-	}
-
 	if (doc.languageId === 'plaintext' || doc.languageId === 'tsql') {  // one tsql ext grabs .lst!
 		const lcount = doc.lineCount;
 		if (lcount >= 2) {
@@ -69,9 +56,6 @@ export function activate(context: vscode.ExtensionContext) {
 
 	const thisExtension = extensions.getExtension("bitlang.gnucobol");
 	if (thisExtension !== undefined) {
-		const editorConfig = workspace.getConfiguration('gnucobol');
-		const prefer_gnucobol_syntax = editorConfig.get<boolean>('prefer_gnucobol_syntax', true);
-	
 		logMessage(`VSCode version          : ${vscode.version}`);
 		logMessage(` Platform               : ${os.platform}`);
 		logMessage(` Architecture           : ${os.arch}`);
@@ -79,6 +63,5 @@ export function activate(context: vscode.ExtensionContext) {
 		logMessage(` Extension path         : ${thisExtension.extensionPath}`);
 		logMessage(` Version                : ${thisExtension.packageJSON.version}`);
 		logMessage(` bitlang.COBOL active   : ${isBITLANGCOBOLActive}`);
-		logMessage(` prefer_gnucobol_syntax : ${prefer_gnucobol_syntax}`);
 	}
 }
