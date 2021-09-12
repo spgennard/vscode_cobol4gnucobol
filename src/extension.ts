@@ -3,10 +3,11 @@ import { extensions, languages, OutputChannel, TextDocument, window, workspace }
 import util from 'util';
 import os from 'os';
 import { DumpFileSymbolProvider } from './dumpFileSymbolProvider';
+import { GnuCOBOLDocumentSymbolProvider } from './gnuCOBOLSymbolProvider';
 
 const COBOLOutputChannel: OutputChannel = window.createOutputChannel("GnuCOBOL");
 
-function logMessage(message: string, ...parameters: any[]): void {
+export function logMessage(message: string, ...parameters: any[]): void {
 	if ((parameters !== undefined || parameters !== null) && parameters.length !== 0) {
 		COBOLOutputChannel.appendLine(util.format(message, parameters));
 	} else {
@@ -80,6 +81,9 @@ function flip_plaintext(doc: TextDocument) {
 }
 
 export function activate(context: vscode.ExtensionContext) {
+	const cobolSelectors = [
+		{ scheme: 'file', language: 'GnuCOBOL' },
+	];
 	const onDidOpenTextDocumentHandler = workspace.onDidOpenTextDocument((doc) => {
 		flip_plaintext(doc);
 	});
@@ -89,6 +93,9 @@ export function activate(context: vscode.ExtensionContext) {
 	for (let docid = 0; docid < workspace.textDocuments.length; docid++) {
 		flip_plaintext(workspace.textDocuments[docid]);
 	}
+
+	const documentSymbolProvider = new GnuCOBOLDocumentSymbolProvider();
+	context.subscriptions.push(languages.registerDocumentSymbolProvider(cobolSelectors, documentSymbolProvider));
 
 	const dumpfileSelector = [
 		{ scheme: 'file', language: 'COBOL_GNU_DUMPFILE' }
