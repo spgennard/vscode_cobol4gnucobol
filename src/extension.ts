@@ -80,7 +80,133 @@ function flip_plaintext(doc: TextDocument) {
 	}
 }
 
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function getExtensionInformation(grab_info_for_ext: vscode.Extension<any>, reasons: string[]): string {
+	let dupExtensionMessage = "";
+
+	dupExtensionMessage += `\nThe extension ${grab_info_for_ext.packageJSON.name} from ${grab_info_for_ext.packageJSON.publisher} has conflicting functionality\n`;
+	if (reasons.length !== 0) {
+		for (const reason of reasons) {
+			dupExtensionMessage += ` Reason        : ${reason}\n`;
+		}
+	}
+
+	if (grab_info_for_ext.packageJSON.id !== undefined) {
+		dupExtensionMessage += ` Id            : ${grab_info_for_ext.packageJSON.id}\n`;
+
+		if (grab_info_for_ext.packageJSON.description !== undefined) {
+			dupExtensionMessage += ` Description   : ${grab_info_for_ext.packageJSON.description}\n`;
+		}
+		if (grab_info_for_ext.packageJSON.version !== undefined) {
+			dupExtensionMessage += ` Version       : ${grab_info_for_ext.packageJSON.version}\n`;
+		}
+		if (grab_info_for_ext.packageJSON.repository !== undefined && grab_info_for_ext.packageJSON.repository.url !== undefined) {
+			dupExtensionMessage += ` Repository    : ${grab_info_for_ext.packageJSON.repository.url}\n`;
+		}
+		if (grab_info_for_ext.packageJSON.bugs !== undefined && grab_info_for_ext.packageJSON.bugs.url !== undefined) {
+			dupExtensionMessage += ` Bug Reporting : ${grab_info_for_ext.packageJSON.bugs.url}\n`;
+		}
+		if (grab_info_for_ext.packageJSON.bugs !== undefined && grab_info_for_ext.packageJSON.bugs.email !== undefined) {
+			dupExtensionMessage += ` Bug Email     : ${grab_info_for_ext.packageJSON.bugs.email}\n`;
+		}
+		if (dupExtensionMessage.length !== 0) {
+			dupExtensionMessage += "\n";
+		}
+	}
+
+	return dupExtensionMessage;
+}
+
+function checkForExtensionConflicts(): string {
+	let dupExtensionMessage = "";
+
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	for (const ext of extensions.all) {
+		const reason = [];
+		if (ext !== undefined && ext.packageJSON !== undefined) {
+			if (ext.packageJSON.id !== undefined) {
+				if (ext.packageJSON.id === 'bitlang.gnucobol') {
+					continue;
+				}
+			}
+
+			let extMarkedAsDebugger = false;
+			//categories
+
+			if (ext.packageJSON.categories !== undefined) {
+				const categoriesBody = ext.packageJSON.categories;
+				if (categoriesBody !== undefined && categoriesBody instanceof Object) {
+					for (const key in categoriesBody) {
+						try {
+							const element = categoriesBody[key];
+							if (element !== undefined) {
+								const l = `${element}`.toUpperCase();
+								if (l === 'DEBUGGERS') {
+									extMarkedAsDebugger = true;
+								}
+							}
+						} catch {
+							// just incase
+						}
+					}
+				}
+			}
+
+			if (ext.packageJSON.contributes !== undefined) {
+				const grammarsBody = ext.packageJSON.contributes.grammars;
+				const languagesBody = ext.packageJSON.contributes.languages;
+
+				// check for unexpected duplicate COBOL language
+				if (grammarsBody !== undefined && grammarsBody instanceof Object) {
+					for (const key in grammarsBody) {
+						try {
+							const element = grammarsBody[key];
+							if (element !== undefined && element.language !== undefined) {
+								const l = `${element.language}`.toUpperCase();
+								if (l === 'COBOL') {
+									reason.push("contributes conflicting grammar");
+								}
+							}
+						} catch {
+							// just incase
+						}
+					}
+				}
+
+				// check for language id
+				if (languagesBody !== undefined && languagesBody instanceof Object) {
+					for (const key in languagesBody) {
+						const languageElement = languagesBody[key];
+						try {
+
+							if (languageElement !== undefined && languageElement.id !== undefined) {
+								const l = `${languageElement.id}`.toUpperCase();
+								if (l === 'COBOL') {
+									reason.push("contributes language id");
+								}
+							}
+						}
+						catch {
+							// just incase
+						}
+					}
+				}
+			}
+		}
+
+		if (reason.length !== 0) {
+			dupExtensionMessage += getExtensionInformation(ext, reason);
+		}
+
+	}
+
+	return dupExtensionMessage;
+}
+
+
 export function activate(context: vscode.ExtensionContext) {
+	COBOLOutputChannel.clear();
 	const cobolSelectors = [
 		{ scheme: 'file', language: 'GnuCOBOL' },
 	];
@@ -102,7 +228,6 @@ export function activate(context: vscode.ExtensionContext) {
 	];
 	const dumpfileSymbolProvider = new DumpFileSymbolProvider();
 	context.subscriptions.push(languages.registerDocumentSymbolProvider(dumpfileSelector, dumpfileSymbolProvider));
-	COBOLOutputChannel.clear();
 
 	const thisExtension = extensions.getExtension("bitlang.gnucobol");
 	if (thisExtension !== undefined) {
@@ -112,5 +237,13 @@ export function activate(context: vscode.ExtensionContext) {
 		logMessage("Extension Information:");
 		logMessage(` Extension path         : ${thisExtension.extensionPath}`);
 		logMessage(` Version                : ${thisExtension.packageJSON.version}`);
+	}
+
+	const checkForExtensionConflictsMessage = checkForExtensionConflicts();
+
+	// display the message
+	if (checkForExtensionConflictsMessage.length !== 0) {
+		logMessage(checkForExtensionConflictsMessage);
+		COBOLOutputChannel.show(false);
 	}
 }
