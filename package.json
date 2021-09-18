@@ -10,7 +10,7 @@
     "keywords": [
         "GnuCOBOL"
     ],
-    "version": "0.7.1",
+    "version": "0.7.4",
     "publisher": "bitlang",
     "engines": {
         "vscode": "^1.60.0"
@@ -24,9 +24,15 @@
         "Programming Languages"
     ],
     "activationEvents": [
+        "onStartupFinished",
         "onFileSystem:file",
         "onLanguage:plaintext",
-        "onLanguage:GnuCOBOL"
+        "onLanguage:GnuCOBOL",
+        "onLanguage:gnucobol",
+        "workspaceContains:**/*.cobol",
+        "workspaceContains:**/*.cob",
+        "workspaceContains:**/*.cbl",
+        "workspaceContains:**/*.cpy"
     ],
     "main": "./out/extension.js",
     "icon": "gnucobol.png",
@@ -62,7 +68,7 @@
                     ".bib",
                     ".pco"
                 ],
-                "configuration": "./gnucobol-configuration.json"
+                "configuration": "./gnucobol.configuration.json"
             },
             {
                 "id": "COBOL_GNU_LISTFILE",
@@ -253,6 +259,9 @@
         "test": "node ./out/test/runTest.js",
         "lint": "eslint . --ext .ts,.tsx",
         "watch": "tsc -watch -p ./"
+    },
+    "dependencies": {
+    	"typescript-string-operations": "^1.4.1"
     },
     "devDependencies": {
         "@types/glob": "^7.1.4",
