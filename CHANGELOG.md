@@ -3,7 +3,10 @@
 Changelog for spgennardvscode_cobol4gnucobol.
 
 
-## Unreleased 
+## 0.7.4 
+ 
+**Update CHANGELOG.md**
+* [d43607f79b8215f](https://github.com/spgennard/vscode_cobol4gnucobol/commit/d43607f79b8215f) *2021-09-18 19:43:29*
  
 **fix release problem**
 * [57d2cdd082de19d](https://github.com/spgennard/vscode_cobol4gnucobol/commit/57d2cdd082de19d) *2021-09-18 19:38:59*
