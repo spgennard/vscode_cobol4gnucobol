@@ -91,15 +91,7 @@
       "name": "meta.preprocessor"
     },
     {
-      "match": "(\\s|^)(?i)(?i:thread-local|extension|active-class|aligned|anycase|attribute|b-and|b-or|b-not|b-xor|bit|capacity|chain|conversion|end-chain|float-binary-128|float-binary-32|float-binary-64|float-extended|float-infinity|float-not-a-number|indirect|intermediate|left-justify|pic\\s*n|picture\\s*n|prefixed|raise|raising|right-justify|rounding|standrd-binary|standard-decimal|symbol|trailing-sign|zero-fil|boolean-of-integer|char-national|display-of|exception-file-n|exception-location-n|formatted-current-date|formatted-date|formatted-datetime|formatted-time|integer-of-boolean|integer-of-formatted-date|length-an|locale-compare|national-of|standard-compare|test-formatted-datetime|test-numval-c|test-numval-f|display\\s*message.*)(?=\\s|\\.|$)",
-      "name": "invalid.illegal.gnucobol"
-    },
-    {
-      "match": "(?<![-_])(?i:record-position|modify|inquire|title|event|center|label-offset|cell|help-id|cells|push-button|list-box|label|default-font|id|no-tab|unsorted|color|height|width|bind|thread|erase|modeless|scroll|system|menu|title-bar|wrap|destroy|resizeable|user-gray|large-font|newline|3-d|data-columns|display-columns|alignment|separation|cursor-frame-width|divider-color|drag-color|heading-color|heading-divider-color|num-rows|record-data|tiled-headings|vpadding|centered-headings|column-headings|self-act|cancel-button|vscroll|report-composer|clsid|primary-interface|active-x-control|default-interface|default-source|auto-minimize|auto-resize|resource|engraved|initial-state|frame|acuactivexcontrol|activex-res|grid|box|message)(?=\\s|\\.|,|$)",
-      "name": "invalid.illegal.acucobol"
-    },
-    {
-      "match": "(?<![-_])(?i:active-class|aligned|anycase|b-and|b-not|b-or|b-xor|bit|boolean|chain|class-id|end-chain|eo|exception-object|expands|factory|float-binary-128|float-binary-32|float-binary-64|float-extended|float-infinity|float-not-a-number|format|function-pointer|get|group-usage|implements|inherits|interface-id|interface|invoke|lc_all|lc_collate|lc_ctype|lc_messages|lc_monetary|lc-numeric|lc_time|left-justify|method-id|method|none|object-reference|override|prefixed|prototype|raise|raising|relation|right-justify|self|sources|space-fill|statement|strong|super|symbol|trailing-sign|typedef|universal|utf-16|utf-8|val-status|valid|validate-status|zero-fil)",
+      "match": "(\\s|^)(?i:thread-local|extension|active-class|aligned|anycase|attribute|b-and|b-or|b-not|b-xor|bit|capacity|chain|conversion|end-chain|float-binary-128|float-binary-32|float-binary-64|float-extended|float-infinity|float-not-a-number|indirect|intermediate|left-justify|pic\\s*n|picture\\s*n|prefixed|raise|raising|right-justify|rounding|standrd-binary|standard-decimal|symbol|trailing-sign|zero-fil|boolean-of-integer|char-national|display-of|exception-file-n|exception-location-n|formatted-current-date|formatted-date|formatted-datetime|formatted-time|integer-of-boolean|integer-of-formatted-date|length-an|locale-compare|national-of|standard-compare|test-formatted-datetime|test-numval-c|test-numval-f|display\\s*message.*)(?![0-9A-Za-z_-])",
       "name": "invalid.illegal.not_implemented.gnucobol"
     },
     {
@@ -777,7 +769,7 @@
       }
     },
     {
-      "match": "(?<![-_])(?i:if|else|end-if|exit\\s+iterator|exit\\s+program|exit\\s+method|evaluate|end-evaluate|perform|end-perform|when\\s+other|when|continue|call|end-call|chain|end-chain|invoke|end\\s+invoke|go\\s+to|go|sort|merge|use|xml|parse|stop\\s+run|goback\\s+returning|goback|raise|exit\\s+function|await)(?![0-9A-Za-z_-])",
+      "match": "(?<![-_])(?i:if|else|end-if|exit\\s+iterator|exit\\s+program|exit\\s+method|evaluate|end-evaluate|perform|end-perform|when\\s+other|when|continue|call|end-call|invoke|end\\s+invoke|go\\s+to|go|sort|merge|use|xml|parse|stop\\s+run|goback\\s+returning|goback|raise|exit\\s+function|await)(?![0-9A-Za-z_-])",
       "name": "keyword.control.gnucobol"
     },
     {
@@ -821,17 +813,6 @@
       "name": "storage.type.picture.gnucobol"
     },
     {
-      "match": "((?<![-_])(?i:binary|computational-4|comp-4|computational-5|comp-5))\\(([0-9]*)\\)",
-      "captures": {
-        "1": {
-          "name": "invalid.illegal.keyword.verbs.acu.gnucobol"
-        },
-        "2": {
-          "name": "invalid.illegal.constant.numeric.integer"
-        }
-      }
-    },
-    {
       "match": "(?i:cblt-x9-compx|cblt-x8-compx|cblt-x8-comp5|cblt-x4-compx|cblt-x4-comp5|cblt-x2-compx|cblt-x2-comp5|cblt-x1-compx|cblt-x1-comp5|cblt-x1|cblt-vfile-status|cblt-vfile-handle|cblt-sx8-comp5|cblt-sx4-comp5|cblt-sx2-comp5|cblt-sx1-comp5|cblt-subsys-params|cblt-splitjoin-buf|cblt-screen-position|cblt-rtncode|cblt-request-context|cblt-reqhand-service-info|cblt-reqhand-service-funcs|cblt-reqhand-response|cblt-reqhand-funcs|cblt-prog-info-params|cblt-prog-info-arg-info|cblt-printer-properties|cblt-printer-name|cblt-printer-info|cblt-printer-default|cblt-ppointer|cblt-pointer|cblt-os-ssize|cblt-os-size|cblt-os-offset|cblt-os-info-params|cblt-os-flags|cblt-node-name|cblt-nls-msg-params|cblt-nls-msg-number-pair|cblt-nls-msg-ins-struct|cblt-nls-msg-buffer|cblt-mouse-shape|cblt-mouse-rect|cblt-mouse-pos|cblt-mouse-event|cblt-mem-validate-param|cblt-idp-exit-service-funcs|cblt-idp-exit-info|cblt-HWND|cblt-HINSTANCE|cblt-get-scr-line-draw-buffer|cblt-get-scr-graphics-buffer|cblt-generic-attr-value|cblt-generic-attr-rgb-values|cblt-generic-attr-information|cblt-file-status|cblt-fileexist-buf|cblt-exit-params|cblt-exit-info-params|cblt-cancel-proc-params|cblt-bytestream-handle|cblt-alphanum)",
       "name": "support.function.cbltypes.gnucobol"
     },
@@ -850,10 +831,6 @@
     {
       "match": "(\\s+|^)(?i:foreground-color|background-color|prompt|underline|reverse-video|no-echo|highlight|blink)(?![0-9A-Za-z_-])",
       "name": "keyword.screens.gnucobol"
-    },
-    {
-      "match": "(\\s+|^)(?i:bold|high|lowlight|low|standard|background-high|background-low|background-standard)(?![0-9A-Za-z_-])",
-      "name": "invalid.illegal.screens.acu.gnucobol"
     },
     {
       "match": "(?<![-_])(?i:internal|public|protected|final|private|static|new|abstract|override|readonly|property|async-void|async-value|async)(?=\\s|\\.)",
@@ -882,10 +859,6 @@
     {
       "match": "(?<![-_])(?i:json\\s+generate|json|end-json|name\\sof)(?![0-9A-Za-z_-])",
       "name": "keyword.json.gnucobol"
-    },
-    {
-      "match": "(?<![-_])(?i:modify|inquire|tab|title|event|center|label-offset|cell|help-id|cells|push-button|radio-button|page-layout-screen|entry-field|list-box|label|default-font|id|no-tab|unsorted|color|height|width|bind|thread|erase|modeless|scroll|system|menu|title-bar|wrap|destroy|resizeable|user-gray|large-font|newline|3-d|data-columns|display-columns|alignment|separation|cursor-frame-width|divider-color|drag-color|heading-color|heading-divider-color|num-rows|record-data|tiled-headings|vpadding|centered-headings|column-headings|self-act|cancel-button|vscroll|report-composer|clsid|primary-interface|active-x-control|default-interface|default-source|auto-minimize|auto-resize|resource|engraved|initial-state|frame|acuactivexcontrol|activex-res|grid|box|message|namespace|class-name|module|constructor|version|strong|culture|method|handle|exception-value|read-only|dividers|graphical|indexed|termination-value|permanent|boxed|visible|centered|record-position|convert)(?=\\s|\\.|,|;|$)",
-      "name": "invalid.illegal.acu.gnucobol"
     },
     {
       "match": "(?<![-_])(?i:actual|auto|automatic|based-storage|complex|connect|contained|core-index|db-access-control-key|db-data-name|db-exception|db-record-name|db-set-name|db-status|dead-lock|endcobol|end-disable|end-enable|end-send|end-transceive|eos|file-limits|file-limit|formatted|sort-status|usage-mode)(?=\\s|\\.|,|;|$)",
