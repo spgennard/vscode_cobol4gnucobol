@@ -5,6 +5,15 @@ Changelog for spgennardvscode_cobol4gnucobol.
 
 ## Unreleased 
  
+**fix release problem**
+* [57d2cdd082de19d](https://github.com/spgennard/vscode_cobol4gnucobol/commit/57d2cdd082de19d) *2021-09-18 19:38:59*
+ 
+ 
+## 0.7.2 
+ 
+**Update CHANGELOG.md**
+* [25971aaaeef5aa0](https://github.com/spgennard/vscode_cobol4gnucobol/commit/25971aaaeef5aa0) *2021-09-18 11:02:38*
+ 
 **Remove acu items**
 * [2b9c528516c9038](https://github.com/spgennard/vscode_cobol4gnucobol/commit/2b9c528516c9038) *2021-09-18 11:01:05*
  
