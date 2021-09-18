@@ -91,7 +91,7 @@
       "name": "meta.preprocessor"
     },
     {
-      "match": "(\\s|^)(?i:thread-local|extension|active-class|aligned|anycase|attribute|b-and|b-or|b-not|b-xor|bit|capacity|chain|conversion|end-chain|float-binary-128|float-binary-32|float-binary-64|float-extended|float-infinity|float-not-a-number|indirect|intermediate|left-justify|pic\\s*n|picture\\s*n|prefixed|raise|raising|right-justify|rounding|standrd-binary|standard-decimal|symbol|trailing-sign|zero-fil|boolean-of-integer|char-national|display-of|exception-file-n|exception-location-n|formatted-current-date|formatted-date|formatted-datetime|formatted-time|integer-of-boolean|integer-of-formatted-date|length-an|locale-compare|national-of|standard-compare|test-formatted-datetime|test-numval-c|test-numval-f|display\\s*message.*)(?![0-9A-Za-z_-])",
+      "match": "(\\s|^)(?i:thread-local|extension|active-class|aligned|anycase|attribute|b-and|b-or|b-not|b-xor|bit|capacity|chain|conversion|end-chain|float-binary-128|float-binary-32|float-binary-64|float-extended|float-infinity|float-not-a-number|indirect|intermediate|left-justify|pic\\s*n|picture\\s*n|prefixed|raise|raising|right-justify|rounding|standrd-binary|standard-decimal|symbol|trailing-sign|zero-fil|boolean-of-integer|char-national|display-of|exception-file-n|exception-location-n|formatted-current-date|formatted-date|formatted-datetime|formatted-time|integer-of-boolean|integer-of-formatted-date|length-an|locale-compare|national-of|standard-compare|test-formatted-datetime|test-numval-c|test-numval-f|display\\s*message.*|not)(?![0-9A-Za-z_-])",
       "name": "invalid.illegal.not_implemented.gnucobol"
     },
     {
@@ -382,101 +382,7 @@
       "end": "(?i:end\\-exec)"
     },
     {
-      "begin": "(?i:exec\\s+cics)",
-      "name": "string.quoted.cobol.cics",
-      "patterns": [
-        {
-          "match": "(\\s+)(?i:abend|acquire|add|allocate|asktime|assign|bif|build|cancel|change|check|connect|converse|converttime|define|delay|delete|deleteq|deq|document|dump|endbr|endbrowse|enq|enter|extract|fetch|force|formattime|free|freemain|freemain64|gds|get|getmain|getmain64|getnext|get64|handle|ignore|inquire|invoke|issue|journal|link|load|monitor|move|point|pop|post|purge|push|put|put64|query|read|readnext|readprev|readq|receive|release|remove|reset|resetbr|resume|retrieve|return|rewind|rewrite|route|run|send|signal|signoff|signon|soapfault|spoolclose|spoolopen|spoolread|spoolwrite|start|startbr|startbrowse|nosuspend|suspend|syncpoint|test|transform|unlock|update|verify|wait|waitcics|web|write|writeq|wsacontext|wsaepr|xctl)(\\w+|\\s+|\\.|$)",
-          "name": "keyword.verb.cics"
-        },
-        {
-          "match": "(\\w+\\s*)?(\\()([0-9a-zA-Z\\-\\s\"']+)?(\\))?",
-          "captures": {
-            "1": {
-              "name": "meta.symbol.cobol.cics"
-            },
-            "2": {
-              "name": "keyword.bracket.gnucobol"
-            },
-            "3": {
-              "name": "variable.gnucobol"
-            },
-            "4": {
-              "name": "keyword.bracket.gnucobol"
-            }
-          }
-        }
-      ],
-      "end": "(?i:end\\-exec)"
-    },
-    {
-      "begin": "(?i:exec\\s+sqlims)",
-      "name": "string.quoted.cobol.sqlims",
-      "contentName": "meta.embedded.block.sql",
-      "patterns": [
-        {
-          "match": "(\\:([a-zA-Z\\-])*)",
-          "name": "variable.gnucobol"
-        },
-        {
-          "include": "source.sql"
-        }
-      ],
-      "end": "(?i:end\\-exec)"
-    },
-    {
-      "begin": "(?i:exec\\s+ado)",
-      "name": "string.quoted.cobol.ado",
-      "contentName": "meta.embedded.block.sql",
-      "patterns": [
-        {
-          "match": "(\\:([a-zA-Z\\-])*)",
-          "name": "variable.gnucobol"
-        },
-        {
-          "include": "source.sql"
-        }
-      ],
-      "end": "(?i:end\\-exec)"
-    },
-    {
-      "begin": "(?i:exec\\s+html)",
-      "name": "string.quoted.cobol.html",
-      "contentName": "meta.embedded.block.html",
-      "patterns": [
-        {
-          "include": "text.html.basic"
-        }
-      ],
-      "end": "(?i:end\\-exec)"
-    },
-    {
-      "begin": "(?i:exec\\s+java)",
-      "name": "string.quoted.cobol.java",
-      "contentName": "meta.embedded.block.java",
-      "patterns": [
-        {
-          "include": "source.java"
-        }
-      ],
-      "end": "(?i:end\\-exec)"
-    },
-    {
       "match": "(\")(CBL_.*)(\")",
-      "captures": {
-        "1": {
-          "name": "punctuation.definition.string.begin.gnucobol"
-        },
-        "2": {
-          "name": "support.function.gnucobol"
-        },
-        "3": {
-          "name": "punctuation.definition.string.end.gnucobol"
-        }
-      }
-    },
-    {
-      "match": "(\")(PC_.*)(\")",
       "captures": {
         "1": {
           "name": "punctuation.definition.string.begin.gnucobol"
@@ -681,7 +587,7 @@
       "name": "keyword.identifers.gnucobol"
     },
     {
-      "match": "(?<![-_])(?i:max|min|integer-of-date|integer-of-day|integer-part|integer|date-to-yyyymmdd|year-to-yyyy|day-to-yyyyddd|exp|exception-file|exception-location|exception-statement|exception-status|e|variance|integer-of-date|rem|pi|factorial|sqrt|log10|fraction-part|mean|exp|log|char|day-of-integer|date-of-integer|exp10|atan|integer-part|tan|sin|cos|midrange|addr|acos|asin|annuity|present-value|integer-of-day|ord-max|ord-min|ord|random|integer-of-date|sum|standard-deviation|median|reverse|abs|upper-case|lower-case|char-national|numval|mod|range|length|locale-date|locale-time-from-seconds|locale-time|seconds-past-midnight|stored-char-length|substitute-case|substitute|seconds-from-formatted-time|seconds-past-midnight|trim|length-an|numval-c|current-date|national-of|display-of|when-compiled|integer-of-boolean|combined-datetime|concatenate)(?=\\s|\\.|\\(|\\))",
+      "match": "(?<![-_])(?i:max|min|integer-of-date|integer-of-day|integer-part|integer|date-to-yyyymmdd|year-to-yyyy|day-to-yyyyddd|exp|exception-file|exception-location|exception-statement|exception-status|e|variance|integer-of-date|rem|pi|factorial|sqrt|log10|fraction-part|mean|exp|log|char|day-of-integer|date-of-integer|exp10|atan|integer-part|tan|sin|cos|midrange|addr|acos|asin|annuity|present-value|integer-of-day|ord-max|ord-min|ord|random|integer-of-date|sum|standard-deviation|median|reverse|abs|upper-case|lower-case|char-national|numval|mod|range|length|locale-date|locale-time-from-seconds|locale-time|seconds-past-midnight|stored-char-length|substitute-case|substitute|seconds-from-formatted-time|seconds-past-midnight|trim|length-an|numval-c|current-date|national-of|display-of|when-compiled|integer-of-boolean|combined-datetime|concat|concatenate|lowest-algebraic|module-caller-id|module-caller-id|module-date|module-formatted-date|module-id|module-path|module-source|module-time|monetary-decimal-point|monetary-thousands-separator|numeric-decimal-point|numval-f|test-date-yyyymmdd|test-day-yyyyddd|test-numval|numeric-thousands-separator|highest-algebraic|numeric-thousands-separator|content-length|content-of|currency-symbol)(?=\\s|\\.|\\(|\\))",
       "name": "support.function.gnucobol"
     },
     {
@@ -721,31 +627,6 @@
       "name": "storage.type.gnucobol"
     },
     {
-      "match": "(operator-id\\s+[+\\-\\*\\/])",
-      "name": "keyword.operator-id.gnucobol",
-      "captures": {
-        "1": {
-          "name": "keyword.other.verb.gnucobol"
-        },
-        "2": {
-          "name": "meta.symbol.gnucobol"
-        }
-      },
-      "comment": "operator-id ssss "
-    },
-    {
-      "match": "(?i:self)(\\:\\:)([0-9a-zA-Z_\\-\\.]*)(?=\\.$)",
-      "captures": {
-        "1": {
-          "name": "punctuation.accessor.cobol.b3"
-        },
-        "2": {
-          "name": "entity.name.function.b3"
-        }
-      },
-      "comment": " ::.. "
-    },
-    {
       "match": "(\\:\\:)([0-9a-zA-Z_\\-\\.]*)",
       "captures": {
         "1": {
@@ -756,17 +637,6 @@
         }
       },
       "comment": " ::.. "
-    },
-    {
-      "match": "(?<![-_])(?i:type)\\s+([0-9a-zA-Z\\.]*)",
-      "captures": {
-        "0": {
-          "name": "keyword.verbs.cobol.aa"
-        },
-        "1": {
-          "name": "storage.type.cobol.bb"
-        }
-      }
     },
     {
       "match": "(?<![-_])(?i:if|else|end-if|exit\\s+iterator|exit\\s+program|exit\\s+method|evaluate|end-evaluate|perform|end-perform|when\\s+other|when|continue|call|end-call|invoke|end\\s+invoke|go\\s+to|go|sort|merge|use|xml|parse|stop\\s+run|goback\\s+returning|goback|raise|exit\\s+function|await)(?![0-9A-Za-z_-])",
@@ -817,7 +687,7 @@
       "name": "support.function.cbltypes.gnucobol"
     },
     {
-      "match": "(?<![-_])(?i:computational-1|comp-1|computational-2|comp-2|computational-3|comp-3|computational-4|comp-4|computational-x|comp-x|computational-5|comp-5|computational-6|comp-6|computational-n|comp-n|packed-decimal|index|float|double|signed-short|unsigned-short|signed-int|unsigned-int|signed-long|unsigned-long|comp|computational|usage\\sis\\sdisplay|usage\\sis\\sfont|usage\\s+display|binary|mutex-pointer|data-pointer|thread-pointer|sempahore-pointer|event-pointer|program-pointer|procedure-pointer|pointer|window|subwindow|control-type|thread|menu|variant|layout-manager|occurs|typedef|any|times|display\\s+blank\\s+when|blank\\s+when|blank\\s+screen|blank|usage\\sis|is\\spartial|usage|justified|just|right|signed|trailing\\s+separate|sign|seperate)(?=\\s|\\.|\\))",
+      "match": "(?<![-_])(?i:comp-0|computational-0|computational-1|comp-1|computational-2|comp-2|computational-3|comp-3|computational-4|comp-4|computational-x|comp-x|computational-5|comp-5|computational-6|comp-6|computational-n|comp-n|packed-decimal|index|floating|float|double|signed-short|unsigned-short|signed-int|unsigned-int|signed-long|unsigned-long|comp|computational|usage\\sis\\sdisplay|usage\\sis\\sfont|usage\\s+display|binary|mutex-pointer|data-pointer|thread-pointer|sempahore-pointer|event-pointer|program-pointer|procedure-pointer|pointer|window|subwindow|control-type|thread|menu|variant|layout-manager|occurs|typedef|any|times|display\\s+blank\\s+when|blank\\s+when|blank\\s+screen|blank|usage\\sis|is\\spartial|usage|justified|just|right|signed|trailing\\s+separate|sign|seperate)(?=\\s|\\.|\\))",
       "name": "storage.type.picture.gnucobol"
     },
     {
@@ -837,7 +707,7 @@
       "name": "storage.modifier.gnucobol"
     },
     {
-      "match": "=|<|>|<=|>=|<>|\\+|\\-|\\*|\\/|(?<![-_])(?i:b-and|b-or|b-xor|b-exor|b-not|b-left|b-right|and|or|equals|equal|greater\\s+than|less\\s+than|greater)(?![0-9A-Za-z_-])",
+      "match": "=|<|>|<=|>=|<>|\\+|\\-|\\*|\\/|(?<![-_])(?i:b-and|b-or|b-xor|b-exor|b-not|b-left|b-right|and|or|equals|equal|greater\\s+than|greater|less\\s+than|greater)(?![0-9A-Za-z_-])",
       "name": "keyword.operator.gnucobol"
     },
     {
@@ -904,16 +774,12 @@
       "name": "variable.language"
     },
     {
-      "match": "(?<![-_])(?i:self)",
-      "name": "keyword.other.self.gnucobol"
-    },
-    {
-      "match": "(?<![-_])(?i:super)",
-      "name": "keyword.other.super.gnucobol"
-    },
-    {
       "match": "(^[0-9][0-9][0-9][0-9][0-9][0-9])",
       "name": "constant.numeric.integer"
+    },
+    {
+      "match": "(?<![-_])(?i:3-d|absent|action|active-x|adjustable-columns|alignment|allowing|autoterminate|away-from-zero|background-colour|background-high|background-low|background-standard|bar|based|beep|binary-long-long|binary-sequential|bitmap-end|bitmap-handle|bitmap-number|bitmap-start|bitmap-timer|bitmap-trailing|bitmap-transparent-color|bitmap-width|box|boxed|bulk-addition|busy|buttons|byte-length|calendar-font|column-color|column-dividers|column-font|column-headings|column-protection|tab-to-add|tab-to-delete|tab|termination-value|threads|thumb-position|tiled-headings|time-out|timeout|title-position|title|toward-greater|toward-lesser|track|track-area|track-limit|tracks|traditional-font|trailing-shift|transform|transparent|tree-view|truncation|vertical|very-heavy|virtual-width|volatile|vpadding|vscroll|vscroll-bar|vscroll-pos|vtop|wait|web-browser|width|width-in-cells|wrap|write-verify|writers|yyyyddd|yyyymmdd|use-alt|use-return|use-tab|user|user-default|item-text|item-to-add|item-to-delete|item-to-empty|item-value|item|inquire|insert-rows|insertion-index|initialise|initialised|identified|ignore|ignoring|independent|hot-track|hscroll|hscroll-pos|heading-color|heading-divider-color|heading-font|heavy|height-in-cells|hidden-data|high-color|group-value|handle|has-children|graphical|greater|grid|go-back|go-forward|go-home|go-search|fixed|fixed-font|fixed-width|flat|flat-buttons|file-name|file-pos|fill-color|fill-color2|fill-percent|float-decimal-16|float-decimal-34|engraved|ensure-visible|entry-convention|entry-field|entry-reason|display-columns|display-format|divider-color|dividers|dotdash|dotted|drag-color|drop-down|drop-list|foreground-colour|forever|frame|framed|escape-button|escape|equal|equals|erase|exception-value|exclusive|extended-search|extern|external-form|event|event-list|label-offset|large-font|large-offset|last-row|layout-data|leading-shift|leave|left-text|leftline|length-check|lower|lowered|lowlight|magnetic-tape|manual|mass-update|master-index|max-lines|max-progress|max-text|max-val|medium-font|record-data|record-overflow|record-to-add|record-to-delete|refresh|region-color|reorg-criteria|reset-grid|reset-list|reset-tabs|right-align|rimmed|row-color|row-color-pattern|row-dividers|row-font|row-headings|row-protection|save-as-no-prompt|save-as|screen|scroll|scroll-bar|search-options|search-text|seconds|secure|select-all|selection-index|selection-text|self-act|argument-number|argument-value|attributes|auto-decimal|auto-spin|cell-color|cell-data|cell-font|cell-protection|cells|center|centered|centered-headings|century-date|classification|clear-selection|cline|clines|command-line|cursor-col|cursor-color|cursor-frame-width|cursor-row|cursor-x|cursor-y|custom-print-template|cycle|cyl-index|cyl-overflow|dashed|data-columns|data-types|date-entry|default-button|default-font|line-sequential|lines-at-root|list-box|lm-resize|loc|lock-holding|long-date|low-color|navigate-url|nearest-away-from-zero|nearest-even|nearest-toward-zero|no-auto-default|no-autosel|no-box|no-dividers|no-f4|no-focus|no-group-tab|no-key-letter|no-search|no-updown|nominal|nonnumeric|not|notab|nothing|notify|notify-change|notify-dblclick|notify-selchange|num-col-headings|numbers|only|or|organisation|others|overlap-left|overlap-top|overline|page-setup|paged|paragraph|parent|pascal|permanent|physical|pixel|pixels|placement|pop-up|pos|position-shift|present|previous|print|print-no-prompt|default|cursor|crt-under|colours|colors|check-box|and|ascii|binary-int|bitmap|cancel-button|card-punch|card-reader|cassette|ccol|changed|csize|destroy|disp|and|cell|color|combo-box|copy-selection|empty-check|encoding|encryption|expand|finish-reason|full-height|icon|keyboard|locale|message|min-val|minus|modify|multiline|namespace-prefix|namespace|nested|next-item|num-rows|ok-button|prohibited|progress|properties|push-button|query-index|radio-button|raised|read-only|readers|reread|shading|shadow|short-date|show-lines|show-none|show-sel-always|small-font|sort-order|spinner|square|standard-binary|start-x|start-y|static-list|status-bar|status-text|stdcall|strong|style|temporary|unbounded|unframed|unsorted|updaters|upper|validating|value-format|variable|synchronised|system-offset|separation|and|ebcdic|echo|element|end-color|end-modify|eol|equals|equal|fh--fcd|fh--keydef|file-id|intrinsic|print-preview|printer-1|priority|type)(?![0-9A-Za-z_-])",
+      "name": "keyword.gnucobol"
     },
     {
       "match": "(\\()([0-9]*)(:)([0-9]*)(\\))",
