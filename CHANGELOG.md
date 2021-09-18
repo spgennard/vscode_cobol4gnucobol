@@ -5,11 +5,17 @@ Changelog for spgennardvscode_cobol4gnucobol.
 
 ## Unreleased 
  
-**update**
-* [e8e450b9b4b1fd6](https://github.com/spgennard/vscode_cobol4gnucobol/commit/e8e450b9b4b1fd6) *2021-09-17 21:23:53*
+**Remove acu items**
+* [2b9c528516c9038](https://github.com/spgennard/vscode_cobol4gnucobol/commit/2b9c528516c9038) *2021-09-18 11:01:05*
  
  
 ## 0.7.1 
+ 
+**Update CHANGELOG.md**
+* [988ff5c41681dd2](https://github.com/spgennard/vscode_cobol4gnucobol/commit/988ff5c41681dd2) *2021-09-17 21:24:09*
+ 
+**update**
+* [e8e450b9b4b1fd6](https://github.com/spgennard/vscode_cobol4gnucobol/commit/e8e450b9b4b1fd6) *2021-09-17 21:23:53*
  
 **notify use of extensions that may conflict with this extension**
 * [1f59075f759e88d](https://github.com/spgennard/vscode_cobol4gnucobol/commit/1f59075f759e88d) *2021-09-17 21:21:04*
