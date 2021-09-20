@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import COBOLSourceScanner, { COBOLTokenStyle, EmptyCOBOLSourceScannerEventHandler } from './cobolsourcescanner';
 import { logMessage } from './extension';
+import { VSCOBOLSourceScanner } from './vscobolscanner';
 import { VSCodeSourceHandler } from './vscodesourcehandler';
 import { VSExternalFeatures } from './vsexternalfeatures';
 
@@ -11,8 +12,7 @@ export class GnuCOBOLDocumentSymbolProvider implements vscode.DocumentSymbolProv
     public async provideDocumentSymbols(document: vscode.TextDocument, canceltoken: vscode.CancellationToken): Promise<vscode.SymbolInformation[]> {
         const symbols: vscode.SymbolInformation[] = [];
 
-        const sf = COBOLSourceScanner.ParseUncached(new VSCodeSourceHandler(document,false, undefined),false, new EmptyCOBOLSourceScannerEventHandler(), new VSExternalFeatures());
-
+        const sf = VSCOBOLSourceScanner.getCachedObject(document);
         if (sf === undefined) {
             return symbols;
         }

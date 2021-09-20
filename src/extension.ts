@@ -4,6 +4,7 @@ import util from 'util';
 import os from 'os';
 import { DumpFileSymbolProvider } from './dumpFileSymbolProvider';
 import { GnuCOBOLDocumentSymbolProvider } from './gnuCOBOLSymbolProvider';
+import { COBOLSourceDefinition } from './sourceDefinitionProvider';
 
 const COBOLOutputChannel: OutputChannel = window.createOutputChannel("GnuCOBOL");
 
@@ -223,6 +224,9 @@ export function activate(context: vscode.ExtensionContext) {
 	const documentSymbolProvider = new GnuCOBOLDocumentSymbolProvider();
 	context.subscriptions.push(languages.registerDocumentSymbolProvider(cobolSelectors, documentSymbolProvider));
 
+	const cobolSourceDefinitionProvider = new COBOLSourceDefinition();
+	context.subscriptions.push(languages.registerDefinitionProvider(cobolSelectors, cobolSourceDefinitionProvider));
+	
 	const dumpfileSelector = [
 		{ scheme: 'file', language: 'COBOL_GNU_DUMPFILE' }
 	];

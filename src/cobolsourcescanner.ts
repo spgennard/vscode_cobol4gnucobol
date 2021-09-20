@@ -693,8 +693,6 @@ export default class COBOLSourceScanner implements ICommentCallback, ICOBOLSourc
 
     private externalFeatures: IExternalFeatures;
 
-    private isPreProcessorsActive = false;
-
     public static ParseUncached(sourceHandler: ISourceHandler,
         parse_copybooks_for_references: boolean,
         eventHandler: ICOBOLSourceScannerEvents,
