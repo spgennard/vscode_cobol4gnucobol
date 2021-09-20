@@ -5,6 +5,15 @@ Changelog for spgennardvscode_cobol4gnucobol.
 
 ## Unreleased 
  
+**add sourcedef provider**
+* [cb463733706a602](https://github.com/spgennard/vscode_cobol4gnucobol/commit/cb463733706a602) *2021-09-20 22:55:10*
+ 
+ 
+## 0.7.6 
+ 
+**Update CHANGELOG.md**
+* [754a77388e8029a](https://github.com/spgennard/vscode_cobol4gnucobol/commit/754a77388e8029a) *2021-09-18 22:20:53*
+ 
 **update syntax**
 * [0ec40b8f4b861c9](https://github.com/spgennard/vscode_cobol4gnucobol/commit/0ec40b8f4b861c9) *2021-09-18 22:09:52*
  
