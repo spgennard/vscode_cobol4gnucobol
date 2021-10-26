@@ -105,7 +105,6 @@
             "[GnuCOBOL]": {
                 "editor.semanticHighlighting.enabled": false,
                 "editor.insertSpaces": true,
-                "editor.renderIndentGuides": false,
                 "files.autoGuessEncoding": false,
                 "editor.autoIndent": "full",
                 "editor.formatOnType": false,
