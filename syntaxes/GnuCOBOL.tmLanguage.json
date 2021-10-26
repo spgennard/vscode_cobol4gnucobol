@@ -91,7 +91,7 @@
       "name": "meta.preprocessor"
     },
     {
-      "match": "(\\s|^)(?i:thread-local|extension|active-class|aligned|anycase|attribute|b-and|b-or|b-not|b-xor|bit|capacity|chain|conversion|end-chain|float-binary-128|float-binary-32|float-binary-64|float-extended|float-infinity|float-not-a-number|indirect|intermediate|left-justify|pic\\s*n|picture\\s*n|prefixed|raise|raising|right-justify|rounding|standrd-binary|standard-decimal|symbol|trailing-sign|zero-fil|boolean-of-integer|char-national|display-of|exception-file-n|exception-location-n|formatted-current-date|formatted-date|formatted-datetime|formatted-time|integer-of-boolean|integer-of-formatted-date|length-an|locale-compare|national-of|standard-compare|test-formatted-datetime|test-numval-c|test-numval-f|display\\s*message.*|not)(?![0-9A-Za-z_-])",
+      "match": "(\\s|^)(?i:thread-local|extension|active-class|aligned|anycase|attribute|b-and|b-or|b-not|b-xor|bit|capacity|chain|conversion|end-chain|float-infinity|float-not-a-number|indirect|intermediate|left-justify|pic\\s*n|picture\\s*n|prefixed|raise|raising|right-justify|rounding|standrd-binary|standard-decimal|symbol|trailing-sign|zero-fil|boolean-of-integer|char-national|display-of|exception-file-n|exception-location-n|integer-of-boolean|national-of|standard-compare|display\\s*message.*|not|baseconvert|convert|find-string|module-name)(?![0-9A-Za-z_-])",
       "name": "invalid.illegal.not_implemented.gnucobol"
     },
     {
@@ -587,7 +587,7 @@
       "name": "keyword.identifers.gnucobol"
     },
     {
-      "match": "(?<![-_])(?i:max|min|integer-of-date|integer-of-day|integer-part|integer|date-to-yyyymmdd|year-to-yyyy|day-to-yyyyddd|exp|exception-file|exception-location|exception-statement|exception-status|e|variance|integer-of-date|rem|pi|factorial|sqrt|log10|fraction-part|mean|exp|log|char|day-of-integer|date-of-integer|exp10|atan|integer-part|tan|sin|cos|midrange|addr|acos|asin|annuity|present-value|integer-of-day|ord-max|ord-min|ord|random|integer-of-date|sum|standard-deviation|median|reverse|abs|upper-case|lower-case|char-national|numval|mod|range|length|locale-date|locale-time-from-seconds|locale-time|seconds-past-midnight|stored-char-length|substitute-case|substitute|seconds-from-formatted-time|seconds-past-midnight|trim|length-an|numval-c|current-date|national-of|display-of|when-compiled|integer-of-boolean|combined-datetime|concat|concatenate|lowest-algebraic|module-caller-id|module-caller-id|module-date|module-formatted-date|module-id|module-path|module-source|module-time|monetary-decimal-point|monetary-thousands-separator|numeric-decimal-point|numval-f|test-date-yyyymmdd|test-day-yyyyddd|test-numval|numeric-thousands-separator|highest-algebraic|numeric-thousands-separator|content-length|content-of|currency-symbol)(?=\\s|\\.|\\(|\\))",
+      "match": "(?<![-_])(?i:max|min|integer-of-date|integer-of-day|integer-part|integer|date-to-yyyymmdd|year-to-yyyy|day-to-yyyyddd|exp|exception-file|exception-location|exception-statement|exception-status|e|variance|integer-of-date|rem|pi|factorial|sqrt|log10|fraction-part|mean|exp|log|char|day-of-integer|date-of-integer|exp10|atan|integer-part|tan|sin|cos|midrange|addr|acos|asin|annuity|present-value|integer-of-day|ord-max|ord-min|ord|random|integer-of-date|sum|standard-deviation|median|reverse|abs|upper-case|lower-case|char-national|numval|mod|range|length|locale-date|locale-time-from-seconds|locale-time|seconds-past-midnight|stored-char-length|substitute-case|substitute|seconds-from-formatted-time|seconds-past-midnight|trim|length-an|numval-c|current-date|national-of|display-of|when-compiled|integer-of-boolean|combined-datetime|concat|concatenate|lowest-algebraic|module-caller-id|module-caller-id|module-date|module-formatted-date|module-id|module-path|module-source|module-time|monetary-decimal-point|monetary-thousands-separator|numeric-decimal-point|numval-f|test-date-yyyymmdd|test-day-yyyyddd|test-numval|numeric-thousands-separator|highest-algebraic|numeric-thousands-separator|content-length|content-of|currency-symbol|formatted-current-date|formatted-date|formatted-datetime|formatted-time|integer-of-formatted-date|length-an|locale-compare|test-formatted-datetime| test-numval-c|test-numval-f|byte-length|bit-of|bit-to-char|hex-of|hex-to-char|sign|random)(?=\\s|\\.|\\(|\\))",
       "name": "support.function.gnucobol"
     },
     {
@@ -623,7 +623,7 @@
       "name": "storage.type.gnucobol"
     },
     {
-      "match": "(?<![-_])(?i:bit|byte|binary-char|binary-char-unsigned|binary-short|binary-short-unsigned|binary.long|binary-c-long|binary-long-unsigned|binary-long|binary-double|binary-double-unsigned|float-short|float-extended|float-long|bit|condition-value|characters|character\\s+type|character|comma|crt|decimal|object\\+sreference|object-reference|object|list|dictionary|unsigned)(?=\\s|\\.|,|\\]|\\[)",
+      "match": "(?<![-_])(?i:bit|byte|binary-char|binary-char-unsigned|binary-short|binary-short-unsigned|binary.long|binary-c-long|binary-long-unsigned|binary-long|binary-double|binary-double-unsigned|float-short|float-extended|float-long|bit|condition-value|characters|character\\s+type|character|comma|crt|decimal|object\\+sreference|object-reference|object|list|dictionary|unsigned|float-binary-128|float-binary-32|float-binary-64|float-extended)(?=\\s|\\.|,|\\]|\\[)",
       "name": "storage.type.gnucobol"
     },
     {
@@ -770,7 +770,7 @@
       "name": "keyword.filler.gnucobol"
     },
     {
-      "match": "(?<![-_])(?i:address-of|date|day-of-week|day|debug-content|debug-item|debug-line|debug-item|debug-sub-1|debug-sub-2|debug-sub-3|shift-in|shift-out|sort-control|sort-core-size|sort-file-size|sort-message|sort-return|sort-mode-size|sort-return|tally|time|when-compiled|line-counter|page-counter|return-code|linage-counter|debug-line|debug-name|debug-contents|json-code|json-status|xml-code|xml-event|xml-information|xml-namespace-prefix|xml-namespace|xml-nnamespace-repfix|xml-nnamespace|xml-ntext|jnienvptr)(?![0-9A-Za-z_-])",
+      "match": "(?<![-_])(?i:address-of|date|day-of-week|day|debug-content|debug-item|debug-line|debug-item|debug-sub-1|debug-sub-2|debug-sub-3|shift-in|shift-out|sort-control|sort-core-size|sort-file-size|sort-message|sort-return|sort-mode-size|sort-return|tally|time|when-compiled|line-counter|page-counter|return-code|linage-counter|debug-line|debug-name|debug-contents|json-code|json-status|xml-code|xml-event|xml-information|xml-namespace-prefix|xml-namespace|xml-nnamespace-repfix|xml-nnamespace|xml-ntext|jnienvptr|number-of-call-parameters|cob-crt-status)(?![0-9A-Za-z_-])",
       "name": "variable.language"
     },
     {
