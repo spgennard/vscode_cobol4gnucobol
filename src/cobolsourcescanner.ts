@@ -2051,10 +2051,10 @@ export default class COBOLSourceScanner implements ICommentCallback, ICOBOLSourc
                                 let style = COBOLTokenStyle.Variable;
                                 const nextTokenLower = token.nextSTokenOrBlank().currentTokenLower;
 
-                                if (prevToken === "78") {
+                                if (prevToken === '78') {
                                     style = COBOLTokenStyle.Constant;
                                 }
-                                if (prevToken === "88") {
+                                if (prevToken === '88') {
                                     style = COBOLTokenStyle.ConditionName;
                                 }
 
@@ -2167,7 +2167,7 @@ export default class COBOLSourceScanner implements ICommentCallback, ICOBOLSourc
                         // if the token contain '(' or ')' then it must be a variable reference
                         if (this.containsIndex(currentLower) === false) {
 
-                            if (prevTokenLower === 'perform' || prevTokenLower === "to" || prevTokenLower === "goto" ||
+                            if (prevTokenLower === 'perform' || prevTokenLower === 'to' || prevTokenLower === 'goto' ||
                                 prevTokenLower === 'thru' || prevTokenLower === 'through') {
 
                                 /* go nn, could be "move xx to nn" or "go to nn" */
