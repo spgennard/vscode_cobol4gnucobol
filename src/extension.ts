@@ -1,10 +1,10 @@
-import * as vscode from 'vscode';
-import { extensions, languages, OutputChannel, TextDocument, window, workspace } from 'vscode';
-import util from 'util';
-import os from 'os';
-import { DumpFileSymbolProvider } from './dumpFileSymbolProvider';
-import { GnuCOBOLDocumentSymbolProvider } from './gnuCOBOLSymbolProvider';
-import { COBOLSourceDefinition } from './sourceDefinitionProvider';
+import * as vscode from "vscode";
+import { extensions, languages, OutputChannel, TextDocument, window, workspace } from "vscode";
+import util from "util";
+import os from "os";
+import { DumpFileSymbolProvider } from "./dumpFileSymbolProvider";
+import { GnuCOBOLDocumentSymbolProvider } from "./gnuCOBOLSymbolProvider";
+import { COBOLSourceDefinition } from "./sourceDefinitionProvider";
 
 const COBOLOutputChannel: OutputChannel = window.createOutputChannel("GnuCOBOL");
 
@@ -60,15 +60,15 @@ function isSourceGnuCOBOL(doc: TextDocument): boolean {
 function flip_plaintext(doc: TextDocument) {
 
 	switch (doc.languageId) {
-		case 'COBOLIT':
-		case 'COBOL':
+		case "COBOLIT":
+		case "COBOL":
 			if (isSourceGnuCOBOL(doc)) {
 				vscode.languages.setTextDocumentLanguage(doc, "GnuCOBOL");
 				return;
 			}
 	}
 
-	if (doc.languageId === 'plaintext' || doc.languageId === 'tsql') {  // one tsql ext grabs .lst!
+	if (doc.languageId === "plaintext" || doc.languageId === "tsql") {  // one tsql ext grabs .lst!
 		const lcount = doc.lineCount;
 		if (lcount >= 2) {
 			const firstLine = doc.lineAt((0)).text;
@@ -127,7 +127,7 @@ function checkForExtensionConflicts(): string {
 		const reason = [];
 		if (ext !== undefined && ext.packageJSON !== undefined) {
 			if (ext.packageJSON.id !== undefined) {
-				if (ext.packageJSON.id === 'bitlang.gnucobol') {
+				if (ext.packageJSON.id === "bitlang.gnucobol") {
 					continue;
 				}
 			}
@@ -143,7 +143,7 @@ function checkForExtensionConflicts(): string {
 							const element = categoriesBody[key];
 							if (element !== undefined) {
 								const l = `${element}`.toUpperCase();
-								if (l === 'DEBUGGERS') {
+								if (l === "DEBUGGERS") {
 									extMarkedAsDebugger = true;
 								}
 							}
@@ -165,7 +165,7 @@ function checkForExtensionConflicts(): string {
 							const element = grammarsBody[key];
 							if (element !== undefined && element.language !== undefined) {
 								const l = `${element.language}`.toUpperCase();
-								if (l === 'COBOL') {
+								if (l === "COBOL") {
 									reason.push("contributes conflicting grammar");
 								}
 							}
@@ -183,7 +183,7 @@ function checkForExtensionConflicts(): string {
 
 							if (languageElement !== undefined && languageElement.id !== undefined) {
 								const l = `${languageElement.id}`.toUpperCase();
-								if (l === 'COBOL') {
+								if (l === "COBOL") {
 									reason.push("contributes language id");
 								}
 							}
@@ -209,7 +209,7 @@ function checkForExtensionConflicts(): string {
 export function activate(context: vscode.ExtensionContext) {
 	COBOLOutputChannel.clear();
 	const cobolSelectors = [
-		{ scheme: 'file', language: 'GnuCOBOL' },
+		{ scheme: "file", language: "GnuCOBOL" },
 	];
 	const onDidOpenTextDocumentHandler = workspace.onDidOpenTextDocument((doc) => {
 		flip_plaintext(doc);
@@ -228,7 +228,7 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(languages.registerDefinitionProvider(cobolSelectors, cobolSourceDefinitionProvider));
 	
 	const dumpfileSelector = [
-		{ scheme: 'file', language: 'COBOL_GNU_DUMPFILE' }
+		{ scheme: "file", language: "COBOL_GNU_DUMPFILE" }
 	];
 	const dumpfileSymbolProvider = new DumpFileSymbolProvider();
 	context.subscriptions.push(languages.registerDocumentSymbolProvider(dumpfileSelector, dumpfileSymbolProvider));
