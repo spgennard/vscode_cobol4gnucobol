@@ -10,7 +10,7 @@ export class VSCOBOLFileUtils {
             return undefined;
         }
         for (const folder of ws) {
-            if (folder.uri.scheme === 'file') {
+            if (folder.uri.scheme === "file") {
                 const folderPath = folder.uri.path;
                 const possibleFile = path.join(folderPath, sdir);
                 if (COBOLFileUtils.isFile(possibleFile)) {
@@ -34,7 +34,7 @@ export class VSCOBOLFileUtils {
         const fullPath = path.normalize(ddir);
         let bestShortName = "";
         for (const folder of ws) {
-            if (folder.uri.scheme === 'file') {
+            if (folder.uri.scheme === "file") {
                 const folderPath = folder.uri.path;
                 if (fullPath.startsWith(folderPath)) {
                     const possibleShortPath = fullPath.substr(1 + folderPath.length);

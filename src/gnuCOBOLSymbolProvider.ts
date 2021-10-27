@@ -1,10 +1,7 @@
-import * as vscode from 'vscode';
-import COBOLSourceScanner, { COBOLTokenStyle, EmptyCOBOLSourceScannerEventHandler } from './cobolsourcescanner';
-import { logMessage } from './extension';
-import { VSCOBOLSourceScanner } from './vscobolscanner';
-import { VSCodeSourceHandler } from './vscodesourcehandler';
-import { VSExternalFeatures } from './vsexternalfeatures';
-
+import * as vscode from "vscode";
+import  { COBOLTokenStyle } from "./cobolsourcescanner";
+import { logMessage } from "./extension";
+import { VSCOBOLSourceScanner } from "./vscobolscanner";
 
 export class GnuCOBOLDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
 
@@ -70,8 +67,8 @@ export class GnuCOBOLDocumentSymbolProvider implements vscode.DocumentSymbolProv
                                 continue;
                             }
 
-                            if (token.extraInformation === 'fd' || token.extraInformation === 'sd'
-                                || token.extraInformation === 'rd' || token.extraInformation === 'select') {
+                            if (token.extraInformation === "fd" || token.extraInformation === "sd"
+                                || token.extraInformation === "rd" || token.extraInformation === "select") {
                                 symbols.push(new vscode.SymbolInformation(token.description, vscode.SymbolKind.File, container, lrange));
                             }
                             else {

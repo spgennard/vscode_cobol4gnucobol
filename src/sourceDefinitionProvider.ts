@@ -1,13 +1,13 @@
-import * as vscode from 'vscode';
-import COBOLSourceScanner, { COBOLTokenStyle, COBOLToken } from './cobolsourcescanner';
-import { logMessage } from './extension';
-import { cobolKeywordDictionary } from './gnuCobolKeywords';
-import { VSCOBOLSourceScanner } from './vscobolscanner';
+import * as vscode from "vscode";
+import COBOLSourceScanner, { COBOLTokenStyle, COBOLToken } from "./cobolsourcescanner";
+import { logMessage } from "./extension";
+import { cobolKeywordDictionary } from "./gnuCobolKeywords";
+import { VSCOBOLSourceScanner } from "./vscobolscanner";
 
 export class COBOLSourceDefinition implements vscode.DefinitionProvider {
 
-    readonly sectionRegEx = new RegExp('[0-9a-zA-Z][a-zA-Z0-9-_]*');
-    readonly variableRegEx = new RegExp('[#0-9a-zA-Z][a-zA-Z0-9-_]*');
+    readonly sectionRegEx = new RegExp("[0-9a-zA-Z][a-zA-Z0-9-_]*");
+    readonly variableRegEx = new RegExp("[#0-9a-zA-Z][a-zA-Z0-9-_]*");
 
     public provideDefinition( document: vscode.TextDocument,
         position: vscode.Position,
@@ -44,7 +44,7 @@ export class COBOLSourceDefinition implements vscode.DefinitionProvider {
 
     private getSectionOrParaLocation(document: vscode.TextDocument, sf: COBOLSourceScanner, position: vscode.Position): vscode.Location | undefined {
         const wordRange = document.getWordRangeAtPosition(position, this.sectionRegEx);
-        const word = wordRange ? document.getText(wordRange) : '';
+        const word = wordRange ? document.getText(wordRange) : "";
         if (word === "") {
             return undefined;
         }
@@ -85,7 +85,7 @@ export class COBOLSourceDefinition implements vscode.DefinitionProvider {
 
     private getVariableInCurrentDocument(locations: vscode.Location[], document: vscode.TextDocument, position: vscode.Position): boolean {
         const wordRange = document.getWordRangeAtPosition(position, this.variableRegEx);
-        const word = wordRange ? document.getText(wordRange) : '';
+        const word = wordRange ? document.getText(wordRange) : "";
         if (word === "") {
             return false;
         }

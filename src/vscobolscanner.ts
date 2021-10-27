@@ -1,8 +1,8 @@
-import * as vscode from 'vscode';
+import * as vscode from "vscode";
 
-import COBOLSourceScanner, { EmptyCOBOLSourceScannerEventHandler } from './cobolsourcescanner';
-import { VSCodeSourceHandler } from './vscodesourcehandler';
-import { VSExternalFeatures } from './vsexternalfeatures';
+import COBOLSourceScanner, { EmptyCOBOLSourceScannerEventHandler } from "./cobolsourcescanner";
+import { VSCodeSourceHandler } from "./vscodesourcehandler";
+import { VSExternalFeatures } from "./vsexternalfeatures";
 
 export class VSCOBOLSourceScanner {
     private static cache = new Map<string,COBOLSourceScanner>();

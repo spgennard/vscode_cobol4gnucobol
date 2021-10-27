@@ -1,4 +1,4 @@
-import * as fs from 'fs';
+import * as fs from "fs";
 
 export class COBOLFileUtils {
     static readonly isWin32 = process.platform === "win32";
