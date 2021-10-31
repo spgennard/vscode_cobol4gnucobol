@@ -4,8 +4,8 @@ This extension provide support for the GnuCOBOL language.
 
 To summarize, this extension provides:
 
-- Problem matchers
-- A derived GnuCOBOL language that injects GnuCOBOL keywords into an existing COBOL syntax.
+- Problem matchers for GnuCOBOL
+- COBOL language based on the GnuCOBOL dialect
 
 ## Task: Single file compile using GnuCOBOL
 
@@ -44,15 +44,17 @@ This example is for GnuCOBOL 1-2.x, for GnuCOBOL use $gnucobol3-cob
 ## Online resources
 
 - Online communities
-   - [GnuCOBOL Community](https://sourceforge.net/p/gnucobol/discussion/)
- - Stack Overflow topics/tags:
-   - [COBOL](https://stackoverflow.com/questions/tagged/cobol)
-   - [GnuCOBOL](https://stackoverflow.com/questions/tagged/gnucobol)
- - [COBOL Programming Language Articles on Reddit](https://www.reddit.com/r/cobol/)
- - [Linkedin Learning COBOL Resources](https://www.linkedin.com/learning/topics/cobol)
+
+- [GnuCOBOL Community](https://sourceforge.net/p/gnucobol/discussion/)
+
+- Stack Overflow topics/tags:
+  - [COBOL](https://stackoverflow.com/questions/tagged/cobol)
+  - [GnuCOBOL](https://stackoverflow.com/questions/tagged/gnucobol)
+- [COBOL Programming Language Articles on Reddit](https://www.reddit.com/r/cobol/)
+- [Linkedin Learning COBOL Resources](https://www.linkedin.com/learning/topics/cobol)
+
 - wikipedia
   - [COBOL](https://en.wikipedia.org/wiki/COBOL)
-  - [CICS](https://en.wikipedia.org/wiki/CICS)
 
 ## Contributors
 
