@@ -124,7 +124,7 @@
                 "name": "gnucobol-cobc",
                 "regexp": "^(.*): ?(\\d+): ([eE]rror|[wW]arning): ([^[]*)(\\[(.*)\\])?$",
                 "file": 1,
-                "line": 2,
+                "location": 2,
                 "severity": 3,
                 "message": 4,
                 "code": 6
@@ -133,7 +133,7 @@
                 "name": "gnucobol3-cobc",
                 "regexp": "^(.*): ?(\\d+): (error|warning): ([^[]*)(\\[(.*)\\])?$",
                 "file": 1,
-                "line": 2,
+                "location": 2,
                 "severity": 3,
                 "message": 4,
                 "code": 6
@@ -142,7 +142,7 @@
                 "name": "gnucobol-warning-cobc",
                 "regexp": "^(.*): ?(\\d+): ([wW]arning|[wW]arnung|[wW]aarschuwing|[aA]lerta|avertissement|упозорење): ([^[]*)(\\[(.*)\\])?$",
                 "file": 1,
-                "line": 2,
+                "location": 2,
                 "message": 4,
                 "code": 6
             },
@@ -150,7 +150,7 @@
                 "name": "gnucobol-error-cobc",
                 "regexp": "^(.*): ?(\\d+): *([eE]rror|[fF]ehler|[fF]out||[eE]rrores|[eE]rrores|erreur|грешка): ([^[]*)(\\[(.*)\\])?$",
                 "file": 1,
-                "line": 2,
+                "location": 2,
                 "message": 4,
                 "code": 6
             },
@@ -158,7 +158,7 @@
                 "name": "gnucobol3-note-cobc",
                 "regexp": "^(.*): ?(\\d+): ([nN]ote|Anmerkung|[nN]ota): ([^[]*)(\\[(.*)\\])?$",
                 "file": 1,
-                "line": 2,
+                "location": 2,
                 "message": 4,
                 "code": 6
             },
