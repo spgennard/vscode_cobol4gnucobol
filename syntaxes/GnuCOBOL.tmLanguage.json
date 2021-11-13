@@ -91,7 +91,7 @@
       "name": "meta.preprocessor"
     },
     {
-      "match": "(\\s|^)(?i:thread-local|extension|active-class|aligned|anycase|attribute|b-and|b-or|b-not|b-xor|bit|capacity|chain|conversion|end-chain|float-infinity|float-not-a-number|indirect|intermediate|left-justify|pic\\s*n|picture\\s*n|prefixed|raise|raising|right-justify|rounding|standrd-binary|standard-decimal|symbol|trailing-sign|zero-fil|boolean-of-integer|char-national|display-of|exception-file-n|exception-location-n|integer-of-boolean|national-of|standard-compare|display\\s*message.*|not|baseconvert|convert|find-string|module-name)(?![0-9A-Za-z_-])",
+      "match": "(\\s|^)(?i:thread-local|extension|active-class|aligned|anycase|attribute|b-and|b-or|b-not|b-xor|bit|b-shift-lc|b-shift-l|b-shift-rc|b-shift-r|capacity|chain|conversion|end-chain|float-infinity|float-not-a-number|indirect|intermediate|left-justify|pic\\s*n|picture\\s*n|prefixed|raise|raising|right-justify|rounding|standrd-binary|standard-decimal|symbol|trailing-sign|zero-fil|boolean-of-integer|char-national|display-of|exception-file-n|exception-location-n|integer-of-boolean|national-of|standard-compare|display\\s*message.*|not|baseconvert|convert|find-string|module-name|resume|bytes|editing|format|get|group-usage|message-tag|received|self|space-fill|super|universal|val-status|validate-status|valid|xor|backward|binary-encoding|current|utf-16|utf-8|zero-fill|ucs-4)(?![0-9A-Za-z_-])",
       "name": "invalid.illegal.not_implemented.gnucobol"
     },
     {
@@ -329,7 +329,7 @@
       "name": "meta.symbol.cobol.forced"
     },
     {
-      "begin": "((?<![-_a-zA-Z0-9()-])(?i:installation|author|source-computer|object-computer|date-written|security|date-compiled)(\\.|$))",
+      "begin": "((?<![-_a-zA-Z0-9()-])(?i:installation|author|source-computer|object-computer|date-written|security|date-compiled|date-modified)(\\.|$))",
       "beginCaptures": {
         "0": {
           "name": "keyword.identifiers.gnucobol"
@@ -701,11 +701,11 @@
       "name": "support.function.cbltypes.gnucobol"
     },
     {
-      "match": "(?<![-_])(?i:comp-0|computational-0|computational-1|comp-1|computational-2|comp-2|computational-3|comp-3|computational-4|comp-4|computational-x|comp-x|computational-5|comp-5|computational-6|comp-6|computational-n|comp-n|packed-decimal|index|floating|float|double|signed-short|unsigned-short|signed-int|unsigned-int|signed-long|unsigned-long|comp|computational|usage\\sis\\sdisplay|usage\\sis\\sfont|usage\\s+display|binary|mutex-pointer|data-pointer|thread-pointer|sempahore-pointer|event-pointer|program-pointer|procedure-pointer|pointer|window|subwindow|control-type|thread|menu|variant|layout-manager|occurs|typedef|any|times|display\\s+blank\\s+when|blank\\s+when|blank\\s+screen|blank|usage\\sis|is\\spartial|usage|justified|just|right|signed|trailing\\s+separate|sign|seperate)(?=\\s|\\.|\\))",
+      "match": "(?<![-_])(?i:comp-0|computational-0|computational-1|comp-1|computational-2|comp-2|computational-3|comp-3|computational-4|comp-4|computational-x|comp-x|computational-5|comp-5|computational-6|comp-6|computational-n|comp-n|packed-decimal|index|floating|float|double|signed-short|unsigned-short|signed-int|unsigned-int|signed-long|unsigned-long|comp|computational|usage\\sis\\sdisplay|usage\\sis\\sfont|usage\\s+display|binary|mutex-pointer|data-pointer|thread-pointer|sempahore-pointer|event-pointer|program-pointer|procedure-pointer|pointer|window|subwindow|control-type|thread|menu|variant|layout-manager|occurs|typedef|any\\s+length|any\\s+numeric|any|times|display\\s+blank\\s+when|blank\\s+when|blank\\s+screen|blank|usage\\sis|is\\spartial|usage|justified|just|right|signed|trailing\\s+separate|sign|seperate)(?=\\s|\\.|\\))",
       "name": "storage.type.picture.gnucobol"
     },
     {
-      "match": "(?<![-_])(?i:accept|add|address|allocate|cancel|close|commit|compute|continue|delete|disable|display|bell|divide|eject|enable|enter|evaluate|exhibit|named|exit|free|generate|go\\s+to|initialize\\sonly|initialize|initiate|inspect|merge|end-set|set|end-invoke|invoke\\s+run|invoke|move|corresponding|corr|multiply|otherwise|open|sharing|sort-merge|purge|ready|read|kept|receive|release|return|rewrite|rounded|rollback|search|send|sort|collating\\s+sequence|collating|start|service|subtract|suppress|terminate|then|unlock|string|unstring|validate|write|next|statement|sentence)(?![0-9A-Za-z_-])",
+      "match": "(?<![-_])(?i:accept|add|address|allocate|cancel|close|commit|compute|continue|delete|disable|display|bell|divide|eject|enable|enter|evaluate|exhibit|named|exit|free|generate|go\\s+to|initialize\\sonly|initialize|initiate|inspect|merge|end-set|set|end-invoke|invoke\\s+run|invoke|move|corresponding|corr|multiply|otherwise|open|sharing|sort-merge|purge|ready|read|kept|receive|release|return|rewrite|rounded|rollback|search|send|end-send|sort|collating\\s+sequence|collating|start|service|subtract|suppress|terminate|then|unlock|string|unstring|validate|write|next|statement|sentence)(?![0-9A-Za-z_-])",
       "name": "keyword.verbs.gnucobol"
     },
     {
@@ -760,7 +760,7 @@
         }
       },
       "name": "comment.2.block.cobol.remark",
-      "end": "(?i:end\\-remark|\\*{Bench}end|environment\\s+division|data\\s+division|working-storage\\s+section|file-control)",
+      "end": "(?i:end\\-remark|\\*{Bench}end|environment\\s+division|data\\s+division|working-storage\\s+section|file-control|date\\-compiled)",
       "endCaptures": {
         "0": {
           "name": "keyword.gnucobol"
