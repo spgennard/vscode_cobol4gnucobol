@@ -5,6 +5,7 @@ import os from "os";
 import { DumpFileSymbolProvider } from "./dumpFileSymbolProvider";
 import { GnuCOBOLDocumentSymbolProvider } from "./gnuCOBOLSymbolProvider";
 import { COBOLSourceDefinition } from "./sourceDefinitionProvider";
+import { updateDecorations } from "./margindecorations";
 
 const COBOLOutputChannel: OutputChannel = window.createOutputChannel("GnuCOBOL");
 
@@ -233,6 +234,33 @@ export function activate(context: vscode.ExtensionContext) {
 	const dumpfileSymbolProvider = new DumpFileSymbolProvider();
 	context.subscriptions.push(languages.registerDocumentSymbolProvider(dumpfileSelector, dumpfileSymbolProvider));
 
+	window.onDidChangeActiveTextEditor(editor => {
+        if (!editor) {
+            return;
+        }
+        updateDecorations(editor);
+
+    }, null, context.subscriptions);
+
+    window.onDidChangeTextEditorSelection(event => {
+        if (!event.textEditor) {
+            return;
+        }
+        updateDecorations(event.textEditor);
+    }, null, context.subscriptions);
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    workspace.onDidChangeTextDocument(event => {
+        if (!window.activeTextEditor) {
+            return;
+        }
+        updateDecorations(window.activeTextEditor);
+    }, null, context.subscriptions);
+
+    if (window.activeTextEditor !== undefined) {
+        updateDecorations(window.activeTextEditor);
+    }
+	
 	const thisExtension = extensions.getExtension("bitlang.gnucobol");
 	if (thisExtension !== undefined) {
 		logMessage(`VSCode version          : ${vscode.version}`);
