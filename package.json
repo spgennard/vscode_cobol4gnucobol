@@ -252,7 +252,8 @@
         }
     },
     "scripts": {
-        "vscode:prepublish": "npm run compile",
+        "vscode:prepublish": "npm run compile && webpack --mode production",
+        "webpack": "npm run compile && webpack --mode development",
         "compile": "tsc -p ./",
         "test-compile": "tsc -p ./",
         "test": "node ./out/test/runTest.js",
