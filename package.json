@@ -257,10 +257,12 @@
         "test-compile": "tsc -p ./",
         "test": "node ./out/test/runTest.js",
         "lint": "eslint . --ext .ts,.tsx",
-        "watch": "tsc -watch -p ./"
+        "watch": "tsc -watch -p ./",
+	"find-deadcode": "./node_modules/.bin/ts-prune | grep -v \"used in module\""
     },
     "dependencies": {
-    	"typescript-string-operations": "^1.4.1"
+        "ts-prune": "^0.10.1",
+        "typescript-string-operations": "^1.4.1"
     },
     "devDependencies": {
         "@types/glob": "^7.1.4",

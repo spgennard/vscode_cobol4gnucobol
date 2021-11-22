@@ -1,8 +1,6 @@
 import { ESourceFormat } from "./externalfeatures";
 import ISourceHandler from "./isourcehandler";
 
-export const sourceformatMessages: string[] = ["unknown", "fixed", "free", "variable"];
-
 function isNumber(value: string | number): boolean {
     if (value.toString().length === 0) {
         return false;
