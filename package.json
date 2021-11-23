@@ -65,8 +65,7 @@
                     ".src",
                     ".ss",
                     ".wks",
-                    ".bib",
-                    ".pco"
+                    ".bib"
                 ],
                 "configuration": "./gnucobol.configuration.json"
             },
@@ -161,28 +160,6 @@
                 "line": 2,
                 "message": 4,
                 "code": 6
-            },
-            {
-                "name": "procobol-preprocessor",
-                "patterns": [
-                    {
-                        "regexp": "^Error at line (\\d+), column (\\d+) in file (.*)$",
-                        "line": 1,
-                        "column": 2,
-                        "file": 3
-                    },
-                    {
-                        "regexp": "^(.*)$"
-                    },
-                    {
-                        "regexp": "^(.*)$"
-                    },
-                    {
-                        "regexp": "^(\\s+\\d+\\s+)?([^:]*):\\s+(.*)$",
-                        "message": 3,
-                        "code": 2
-                    }
-                ]
             }
         ],
         "problemMatchers": [
@@ -233,16 +210,6 @@
                 "pattern": "$gnucobol3-note-cobc",
                 "severity": "info",
                 "source": "GnuCOBOL3"
-            },
-            {
-                "name": "procobol-preprocessor",
-                "fileLocation": [
-                    "absolute"
-                ],
-                "pattern": "$procobol-preprocessor",
-                "source": "Pro*COBOL",
-                "owner": "cobol",
-                "severity": "error"
             }
         ]
     },
