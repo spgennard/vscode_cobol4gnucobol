@@ -27,47 +27,6 @@
   "name": "GnuCOBOL",
   "patterns": [
     {
-      "begin": "(?i:EXEC\\s+CICS)",
-      "name": "invalid.illegal.gnucobol",
-      "patterns": [
-        {
-          "match": "\\:([a-zA-Z\\-])*",
-          "name": "variable.gnucobol"
-        }
-      ],
-      "end": "(?i:END-EXEC|end\\s*exec)"
-    },
-    {
-      "begin": "(?i:EXEC\\s*ADO)",
-      "name": "invalid.illegal.gnucobol",
-      "patterns": [
-        {
-          "match": "\\:([a-zA-Z\\-])*",
-          "name": "variable.gnucobol"
-        }
-      ],
-      "end": "(?i:END-EXEC|end\\s*exec)"
-    },
-    {
-      "begin": "(?i:EXEC\\s*HTML)",
-      "name": "invalid.illegal.gnucobol",
-      "patterns": [
-        {
-          "match": "\\:([a-zA-Z\\-])*",
-          "name": "variable.gnucobol"
-        }
-      ],
-      "end": "(?i:END-EXEC|end\\s*exec)"
-    },
-    {
-      "match": "(?i:invoke|end-invoke|class-id|end\\s+class|property|try|catch|end\\s+property|exit\\+smethod|method-id|end\\s+method|create|ready|trace|reset|instance|delegate|exception-object|async-void|async-value|async|yielding|await|params|byte)(?=\\s+|\\.|,|\\))",
-      "name": "invalid.illegal.gnucobol"
-    },
-    {
-      "match": "(?:^|\\s)((?i)\\$\\s*set)(?:$|\\s.*$)",
-      "name": "invalid.illegal.gnucobol"
-    },
-    {
       "match": "(?:^|\\s)(?i:.*>>SOURCE)(?:$|\\s.*$)",
       "name": "comment.line.set.gnucobol"
     },
@@ -89,14 +48,6 @@
     {
       "match": ">>\\s*(?i:turn|page|listing|leap-seconds|d).*$",
       "name": "meta.preprocessor"
-    },
-    {
-      "match": "(\\s|^)(?i:thread-local|extension|active-class|aligned|anycase|attribute|b-and|b-or|b-not|b-xor|bit|capacity|chain|conversion|end-chain|float-infinity|float-not-a-number|indirect|intermediate|left-justify|pic\\s*n|picture\\s*n|prefixed|raise|raising|right-justify|rounding|standrd-binary|standard-decimal|symbol|trailing-sign|zero-fil|boolean-of-integer|char-national|display-of|exception-file-n|exception-location-n|integer-of-boolean|national-of|standard-compare|display\\s*message.*|not|resume|format|received|space-fill|xor|binary-encoding|utf-16|utf-8|ucs-4)(?![0-9A-Za-z_-])",
-      "name": "invalid.illegal.not_implemented.gnucobol"
-    },
-    {
-      "match": "(?<![-_])(?i:boolean-of-integer|char-national|display-of|exception-file-n|exception-location-n|integer-of-boolean|national-of|standard-compare)",
-      "name": "invalid.illegal.not_implemented.gnucobol"
     },
     {
       "match": "(^[ \\*][ \\*][ \\*][ \\*][ \\*][ \\*])([dD]\\s.*$)",
@@ -210,50 +161,6 @@
           "name": "comment.line.set.gnucobol"
         }
       }
-    },
-    {
-      "match": "(?:^|\\s+)(?i:\\$\\s*set\\s)((?i:01SHUFFLE|64KPARA|64KSECT|AUXOPT|CHIP|DATALIT|EANIM|EXPANDDATA|FIXING|FLAG-CHIP|MASM|MODEL|OPTSIZE|OPTSPEED|PARAS|PROTMODE|REGPARM|SEGCROSS|SEGSIZE|SIGNCOMPARE|SMALLDD|TABLESEGCROSS|TRICKLECHECK|\\s)+).*$",
-      "captures": {
-        "0": {
-          "name": "comment.line.set.cobol.1"
-        },
-        "1": {
-          "name": "invalid.illegal.directive"
-        },
-        "2": {
-          "name": "comment.line.set.cobol.2"
-        }
-      }
-    },
-    {
-      "match": "(?:^|\\s+)(?i:\\$\\s*set\\s|>>cbl\\s)(.*)$",
-      "captures": {
-        "0": {
-          "name": "comment.line.set.gnucobol"
-        },
-        "1": {
-          "name": "entity.other.attribute-name.set.gnucobol"
-        },
-        "2": {
-          "name": "comment.line.set.gnucobol"
-        }
-      }
-    },
-    {
-      "match": "(\\$region)(.*$)",
-      "captures": {
-        "1": {
-          "name": "meta.preprocessor.gnucobol"
-        },
-        "2": {
-          "name": "string.unquoted.preprocessor.message.gnucobol"
-        }
-      }
-    },
-    {
-      "begin": "\\$(?i:doc)(.*$)",
-      "end": "\\$(?i:end-doc)(.*$)",
-      "name": "invalid.illegal.iscobol"
     },
     {
       "match": "\\$(?i:if|else|then|display|xfd|end-region|end)(.*$)",
@@ -743,14 +650,6 @@
     {
       "match": "(?<![-_])(?i:json\\s+generate|json|end-json|name\\sof)(?![0-9A-Za-z_-])",
       "name": "keyword.json.gnucobol"
-    },
-    {
-      "match": "(?<![-_])(?i:actual|auto|automatic|based-storage|complex|connect|contained|core-index|db-access-control-key|db-data-name|db-exception|db-record-name|db-set-name|db-status|dead-lock|endcobol|end-disable|end-enable|end-send|end-transceive|eos|file-limits|file-limit|formatted|sort-status|usage-mode)(?=\\s|\\.|,|;|$)",
-      "name": "invalid.illegal.netcobol.gnucobol"
-    },
-    {
-      "match": "(?<![-_])(?i:System-Info|Terminal-Info)(?![0-9A-Za-z_-])",
-      "name": "support.type.cobol.acu strong"
     },
     {
       "begin": "(?<![-_\\*])(?i:remarks)",
