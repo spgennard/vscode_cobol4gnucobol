@@ -26,7 +26,6 @@
     "activationEvents": [
         "onStartupFinished",
         "onFileSystem:file",
-        "onLanguage:plaintext",
         "onLanguage:GnuCOBOL",
         "onLanguage:gnucobol",
         "workspaceContains:**/*.cobol",
@@ -48,24 +47,10 @@
                 "extensions": [
                     ".cobol",
                     ".cbl",
-                    ".cblsrce",
-                    ".lks",
-                    ".pdv",
                     ".cpy",
                     ".copybook",
                     ".cobcopy",
-                    ".fd",
-                    ".sel",
-                    ".scb",
-                    ".spb",
-                    ".scbl",
-                    ".cob",
-                    ".dds",
-                    ".def",
-                    ".src",
-                    ".ss",
-                    ".wks",
-                    ".bib"
+                    ".cob"
                 ],
                 "configuration": "./gnucobol.configuration.json"
             },
