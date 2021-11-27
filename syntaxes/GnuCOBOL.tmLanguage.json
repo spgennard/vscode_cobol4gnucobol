@@ -149,20 +149,6 @@
       "name": "comment.line.cobol.fixed"
     },
     {
-      "match": "(?:^|\\s+)(?i:\\$\\s*set\\s+)(ilusing)(.*)$",
-      "captures": {
-        "0": {
-          "name": "comment.line.set.gnucobol"
-        },
-        "1": {
-          "name": "storage.modifier.import.gnucobol"
-        },
-        "2": {
-          "name": "comment.line.set.gnucobol"
-        }
-      }
-    },
-    {
       "match": "\\$(?i:if|else|then|display|xfd|end-region|end)(.*$)",
       "name": "meta.preprocessor.gnucobol"
     },
@@ -202,10 +188,6 @@
     {
       "match": "(\\*>.*$)",
       "name": "comment.line.modern"
-    },
-    {
-      "match": "(>>.*)$",
-      "name": "strong comment.line.set.acucobol"
     },
     {
       "match": "([nNuU][xX]|[hHxX])'\\h*'",
