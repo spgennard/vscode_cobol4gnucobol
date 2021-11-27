@@ -284,39 +284,6 @@
       "name": "constant.language.figurative.gnucobol"
     },
     {
-      "begin": "(?i:exec\\s+sqlims|exec\\s+sql)",
-      "name": "string.quoted.cobol.sql",
-      "contentName": "meta.embedded.block.sql",
-      "patterns": [
-        {
-          "match": "(^\\s*\\*.*)$",
-          "name": "comment.line.sql"
-        },
-        {
-          "match": "(\\:([0-9a-zA-Z\\-_])*)",
-          "name": "variable.gnucobol"
-        },
-        {
-          "include": "source.sql"
-        }
-      ],
-      "end": "(?i:end\\-exec)"
-    },
-    {
-      "match": "(\")(CBL_.*)(\")",
-      "captures": {
-        "1": {
-          "name": "punctuation.definition.string.begin.gnucobol"
-        },
-        "2": {
-          "name": "support.function.gnucobol"
-        },
-        "3": {
-          "name": "punctuation.definition.string.end.gnucobol"
-        }
-      }
-    },
-    {
       "begin": "\"",
       "beginCaptures": {
         "0": {
@@ -330,34 +297,6 @@
         }
       },
       "name": "string.quoted.double.gnucobol"
-    },
-    {
-      "match": "(\\')(CBL_.*)(\\')",
-      "captures": {
-        "1": {
-          "name": "punctuation.definition.string.begin.gnucobol"
-        },
-        "2": {
-          "name": "support.function.gnucobol"
-        },
-        "3": {
-          "name": "punctuation.definition.string.end.gnucobol"
-        }
-      }
-    },
-    {
-      "match": "(\\')(PC_.*)(\\')",
-      "captures": {
-        "1": {
-          "name": "punctuation.definition.string.begin.gnucobol"
-        },
-        "2": {
-          "name": "support.function.gnucobol"
-        },
-        "3": {
-          "name": "punctuation.definition.string.end.gnucobol"
-        }
-      }
     },
     {
       "begin": "'",
@@ -469,35 +408,8 @@
       "name": "keyword.identifiers.gnucobol"
     },
     {
-      "match": "(?<![-_])((?i:valuetype-id|operator-id|method-id|method|property-id|attribute-id|enum-id|iterator-id|class-id|program-id|operator-id|end\\s+program|end\\s+valuetype|extension))[\\.]*[\\s]+([a-zA-Z0-9_]*)",
-      "captures": {
-        "1": {
-          "name": "keyword.verb.gnucobol"
-        },
-        "2": {
-          "name": "entity.name.function.gnucobol"
-        }
-      }
-    },
-    {
-      "match": "(?<![-_])(?i:implements|inherits|constraints|constrain)(?=\\s|\\.)",
-      "name": "keyword.verbs.gnucobol"
-    },
-    {
-      "match": "(?<![-_])(?i:end\\s+enum|end\\s+interface|end\\s+class|end\\s+property|end\\s+method|end\\s+object|end\\s+iterator|end\\s+function|end\\s+operator|end\\s+program|end\\s+indexer|create|reset|instance|delegate|end-delegate|delegate-id|declare|exception-object|as|stop\\s+iterator|stop\\s+run|stop)(?=\\s|\\.|,|\\))",
-      "name": "keyword.identifiers.gnucobol"
-    },
-    {
-      "match": "\\s+(?i:attach\\s+method|attach\\s+del|attach|detach\\s+del|detach\\s+method|detach|method|del)(?=\\s|\\.|$)",
-      "name": "keyword.identifiers.gnucobol"
-    },
-    {
       "match": "\\s+(?i:sync\\s+(?i:on))(?=\\s|\\.)",
       "name": "keyword.other.sync.gnucobol"
-    },
-    {
-      "match": "\\s+(?i:try|finally|catch|end-try|throw)(?=\\s|\\.|$)",
-      "name": "keyword.control.catch-exception.gnucobol"
     },
     {
       "match": "(?<![-_])(?i:select|use|thru|varying|giving|remainder|tallying|through|until|execute|returning|using|chaining|yielding|\\+\\+include|copy|replace)(?=\\s)",
@@ -560,7 +472,7 @@
       "comment": " ::.. "
     },
     {
-      "match": "(?<![-_])(?i:if|else|end-if|exit\\s+iterator|exit\\s+program|exit\\s+method|evaluate|end-evaluate|perform|end-perform|when\\s+other|when|continue|call|end-call|invoke|end\\s+invoke|go\\s+to|go|sort|merge|use|xml|parse|stop\\s+run|goback\\s+returning|goback|raise|exit\\s+function|await)(?![0-9A-Za-z_-])",
+      "match": "(?<![-_])(?i:if|else|end-if|exit\\s+iterator|exit\\s+program|evaluate|end-evaluate|perform|end-perform|when\\s+other|when|continue|call|end-call|go\\s+to|go|sort|merge|use|xml|parse|stop\\s+run|goback\\s+returning|goback|raise|exit\\s+function|await)(?![0-9A-Za-z_-])",
       "name": "keyword.control.gnucobol"
     },
     {
@@ -612,7 +524,7 @@
       "name": "storage.type.picture.gnucobol"
     },
     {
-      "match": "(?<![-_])(?i:accept|add|address|allocate|cancel|close|commit|compute|continue|delete|disable|display|bell|divide|eject|enable|enter|evaluate|exhibit|named|exit|free|generate|go\\s+to|initialize\\sonly|initialize|initiate|inspect|merge|end-set|set|end-invoke|invoke\\s+run|invoke|move|corresponding|corr|multiply|otherwise|open|sharing|sort-merge|purge|ready|read|kept|receive|release|return|rewrite|rounded|rollback|search|send|end-send|sort|collating\\s+sequence|collating|start|service|subtract|suppress|terminate|then|unlock|string|unstring|validate|write|next|statement|sentence)(?![0-9A-Za-z_-])",
+      "match": "(?<![-_])(?i:accept|add|address|allocate|cancel|close|commit|compute|continue|delete|disable|display|bell|divide|eject|enable|enter|evaluate|exhibit|named|exit|free|generate|go\\s+to|initialize\\sonly|initialize|initiate|inspect|merge|end-set|set|move|corresponding|corr|multiply|otherwise|open|sharing|sort-merge|purge|ready|read|kept|receive|release|return|rewrite|rounded|rollback|search|send|end-send|sort|collating\\s+sequence|collating|start|service|subtract|suppress|terminate|then|unlock|string|unstring|validate|write|next|statement|sentence)(?![0-9A-Za-z_-])",
       "name": "keyword.verbs.gnucobol"
     },
     {
