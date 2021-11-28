@@ -39,6 +39,14 @@
         "configuration": {},
         "languages": [
             {
+                "id": "GnuCOBOL31",
+                "aliases": [
+                    "GnuCOBOL31",
+                    "gnucobol31"
+                ],
+                "configuration": "./gnucobol.configuration.json"
+            },
+            {
                 "id": "GnuCOBOL",
                 "aliases": [
                     "GnuCOBOL",
@@ -68,6 +76,11 @@
             }
         ],
         "grammars": [
+            {
+                "language": "GnuCOBOL31",
+                "path": "./syntaxes/GnuCOBOL31.tmLanguage.json",
+                "scopeName": "source.gnucobol31"
+            },            
             {
                 "language": "GnuCOBOL",
                 "path": "./syntaxes/GnuCOBOL.tmLanguage.json",
