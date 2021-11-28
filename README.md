@@ -7,6 +7,10 @@ To summarize, this extension provides:
 - Problem matchers for GnuCOBOL
 - COBOL language based on the GnuCOBOL dialect
 
+## GnuCOBOL
+
+The GnuCOBOL syntax is based on the reserved word list from current version, which is v3.1.2 as of 28th November 2021
+
 ## Task: Single file compile using GnuCOBOL
 
 The example below shows you how you can create a single task to compile one program using the `cobc` command.
