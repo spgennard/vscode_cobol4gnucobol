@@ -1,29 +1,12 @@
 {
   "_copyright": "The MIT License (MIT)\nCopyright (c) 2015-2021 spgennard\nSource: https://github.com/spgennard/vscode_cobol/blob/master/syntaxes/GNUCOBOL.tmLanguage.json",
   "fileTypes": [
-    "ccp",
-    "scbl",
     "cobol",
     "cbl",
-    "cblsrce",
-    "lks",
-    "pdv",
     "cpy",
     "copybook",
     "cobcopy",
-    "fd",
-    "sel",
-    "scb",
-    "scbl",
-    "cob",
-    "dds",
-    "def",
-    "src",
-    "ss",
-    "wks",
-    "bib",
-    "pco"
-  ],
+    "cob"  ],
   "name": "GnuCOBOL",
   "patterns": [
     {
@@ -154,7 +137,7 @@
     },
     {
       "match": ">>\\s*(?i:turn|page|listing|leap-seconds|d)\\s+.*$",
-      "name": "invalid.illegal.meta.preprocessor.cobolit"
+      "name": "invalid.illegal.meta.preprocessor.gnucobol"
     },
     {
       "match": "(>>(\\s*)(?i:if|else|elif|end-if|define|evaluate|when|end-evaluate|display|call-convention).*)(\\*>.*)$",
@@ -169,7 +152,7 @@
     },
     {
       "match": ">>\\s*(?i:if|else|end-if|define|evaluate|when|end-evaluate|display|call-convention).*$",
-      "name": "meta.preprocessor.iso2002"
+      "name": "meta.preprocessor.iso2002.gnucobol"
     },
     {
       "match": "(\\*>)\\s+(@[0-9a-zA-Z][a-zA-Z\\-0-9]+)\\s+(.*$)",
@@ -184,6 +167,10 @@
           "name": "string.gnucobol"
         }
       }
+    },
+    {
+      "match" : "(?<![-_])(?i:active-class|aligned|anycase|author|b-and|b-not|boolean|b-or|b-xor|chain|class-id|data-pointer|date-compiled|date-modified|date-written|end-chain|eo|exception-object|expands|extra|factory|float-binary-128|float-binary-32|float-binary-64|float-extended|float-infinity|float-not-a-number|format|function-pointer|get|group-usage|implements|inherits|installation|interface|interface-id|internal|invoke|lc_all|lc_collate|lc_ctype|lc_messages|lc_monetary|lc_numeric|lc_time|left-justify|method|method-id|none|object-reference|override|prefixed|prototype|raising|relation|xremarks|reserved|resume|right-justify|xsecurity|self|sources|space-fill|statement|super|symbol|trailing-sign|universal|valid|validate-status|val-status|zero-fill)(?![0-9A-Za-z_-])",
+      "name": "token.warn-token.not_implemented.gnucobol"
     },
     {
       "match": "(\\*>.*$)",
@@ -218,7 +205,7 @@
       "name": "meta.symbol.cobol.forced"
     },
     {
-      "begin": "((?<![-_a-zA-Z0-9()-])(?i:installation|author|source-computer|object-computer|date-written|security|date-compiled|date-modified)(\\.|$))",
+      "begin": "((?<![-_a-zA-Z0-9()-])(?i:author|source-computer|object-computer|date-written|security|date-compiled|date-modified)(\\.|$))",
       "beginCaptures": {
         "0": {
           "name": "keyword.identifiers.gnucobol"
@@ -386,7 +373,7 @@
       "name": "string.quoted.utf8.single.gnucobol"
     },
     {
-      "match": "(?<![-_])(?i:id\\s+division|identification\\s+division|identification|id|property-id|getter|setter|entry|function-id|end\\s+attribute|attribute|indexer-id|ctl|class-control|options|environment\\s+division|environment-name|environment-value|environment|configuration\\s+section|configuration|decimal-point\\s+is|decimal-point|console\\s+is|call-convention|special-names|cursor\\s+is|update|picture\\s+symbol|currency\\s+sign|currency|repository|input-output\\s+section|input-output|file\\s+section|file-control|select|optional|i-o-control|data\\s+division|working-storage\\s+section|working-storage|section|local-storage|linkage\\s+section|linkage|communication|report|screen\\s+section|object-storage|object\\s+section|class-object|fd|rd|cd|sd|printing|procedure\\s+division|procedure|division|references|debugging|end\\s+declaratives|declaratives|end\\s+static|end\\s+factory|end\\s+class-object|based-storage|size|font|national-edited|native|national)(?![0-9A-Za-z_-])",
+      "match": "(?<![-_])(?i:id\\s+division|identification\\s+division|identification|id|entry|function-id|ctl|class-control|options|environment\\s+division|environment-name|environment-value|environment|configuration\\s+section|configuration|decimal-point\\s+is|decimal-point|console\\s+is|call-convention|special-names|cursor\\s+is|update|picture\\s+symbol|currency\\s+sign|currency|repository|input-output\\s+section|input-output|file\\s+section|file-control|select|optional|i-o-control|data\\s+division|working-storage\\s+section|working-storage|section|local-storage|linkage\\s+section|linkage|communication|report|screen\\s+section|object-storage|object\\s+section|class-object|fd|rd|cd|sd|printing|procedure\\s+division|procedure|division|references|debugging|end\\s+declaratives|declaratives|size|font|national-edited|native|national)(?![0-9A-Za-z_-])",
       "name": "keyword.identifiers.gnucobol"
     },
     {
@@ -394,7 +381,7 @@
       "name": "keyword.other.sync.gnucobol"
     },
     {
-      "match": "(?<![-_])(?i:select|use|thru|varying|giving|remainder|tallying|through|until|execute|returning|using|chaining|yielding|\\+\\+include|copy|replace)(?=\\s)",
+      "match": "(?<![-_])(?i:select|use|thru|varying|giving|remainder|tallying|through|until|execute|returning|using|chaining|\\+\\+include|copy|replace)(?=\\s)",
       "name": "keyword.otherverbs.gnucobol"
     },
     {
@@ -414,11 +401,11 @@
       "name": "keyword.verbs.gnucobol"
     },
     {
-      "match": "(?<![-_])(?:by value|by reference|by content|property-value)(?![0-9A-Za-z_-])",
+      "match": "(?<![-_])(?:by value|by reference|by content)(?![0-9A-Za-z_-])",
       "name": "keyword.other.gnucobol"
     },
     {
-      "match": "(?<![-_])(?i:attr-string|automatic|auto-skip|footing|next|group|indicate|source|control|full|required|of|input|output|i-o|extend|file|error|exception|overflow|goto|off|on|proceed|procedures|procedure|through|invalid|data|normal|eop|returning|to|for|giving|into|by|params|remainder|also|numeric-edited|numeric|free|depending|converting|replacing|after|before|all|leading|first|recursive|initialized|global|common|initial|resident|reference|content|are\\sstandard|are|renames|like|format\\stime|values|omitted|value|constant|ascending|descending|key|retry|until|varying|with|no|advancing|up|down|uccurs|ignore\\s+lock|lock|length|delimited|count|delimiter|redefines|from\\s+console|from\\s+command-line|from\\s+user\\s+name|from\\s+day\\s+yyyyddd|from\\s+day|from\\s+time|from\\s+day-of-week|from\\s+escape|from\\s+day\\s+yyyyddd|from\\s+date\\s+yyyymmdd|from\\s+date|from|crt\\s+status|status|class|upon\\s+crt|upon|lines|columns|step|linage|auto|line|positive|position|col|reports|code-set|reporting|arithmetic|as|localize|program|class|in|at\\s+end|page|name|memory)(?![0-9A-Za-z_-])",
+      "match": "(?<![-_])(?i:automatic|auto-skip|footing|next|group|indicate|source|control|full|required|of|input|output|i-o|extend|file|error|exception|overflow|goto|off|on|proceed|procedures|procedure|through|invalid|data|normal|eop|returning|to|for|giving|into|by|params|remainder|also|numeric-edited|numeric|free|depending|converting|replacing|after|before|all|leading|first|recursive|initialized|global|common|initial|resident|reference|content|are\\sstandard|are|renames|like|format\\stime|values|omitted|value|constant|ascending|descending|key|retry|until|varying|with|no|advancing|up|down|uccurs|ignore\\s+lock|lock|length|delimited|count|delimiter|redefines|from\\s+console|from\\s+command-line|from\\s+user\\s+name|from\\s+day\\s+yyyyddd|from\\s+day|from\\s+time|from\\s+day-of-week|from\\s+escape|from\\s+day\\s+yyyyddd|from\\s+date\\s+yyyymmdd|from\\s+date|from|crt\\s+status|status|class|upon\\s+crt|upon|lines|columns|step|linage|auto|line|positive|position|col|reports|code-set|reporting|arithmetic|as|localize|program|class|in|at\\s+end|page|name|memory)(?![0-9A-Za-z_-])",
       "name": "keyword.identifers.gnucobol"
     },
     {
@@ -438,7 +425,7 @@
       "comment": " ::.. "
     },
     {
-      "match": "(?<![-_])(?i:if|else|end-if|exit\\s+iterator|exit\\s+program|evaluate|end-evaluate|perform|end-perform|when\\s+other|when|continue|call|end-call|go\\s+to|go|sort|merge|use|xml|parse|stop\\s+run|stop|goback\\s+returning|goback|raise|exit\\s+function|await)(?![0-9A-Za-z_-])",
+      "match": "(?<![-_])(?i:if|else|end-if|exit\\s+program|evaluate|end-evaluate|perform|end-perform|when\\s+other|when|continue|call|end-call|go\\s+to|go|sort|merge|use|xml|parse|stop\\s+run|stop|goback\\s+returning|goback|raise|exit\\s+function)(?![0-9A-Za-z_-])",
       "name": "keyword.control.gnucobol"
     },
     {
@@ -486,7 +473,7 @@
       "name": "storage.type.picture.gnucobol"
     },
     {
-      "match": "(?<![-_])(?i:accept|add|address|allocate|cancel|close|cobol|commit|compute|continue|delete|disable|display|bell|divide|eject|enable|enter|evaluate|exhibit|named|exit|free|generate|go\\s+to|initialize\\sonly|initialize|initiate|inspect|merge|end-set|set|move|corresponding|corr|multiply|otherwise|open|sharing|sort-merge|purge|ready|read|kept|receive|release|return|rewrite|rounded|rollback|search|send|end-send|sort|collating\\s+sequence|collating|start|service|subtract|suppress|terminate|then|unlock|string|unstring|validate|write|next|sentence|apply|areas|area|at|bottom|cf|ch|code|cols|condition|controls|de|destination|detail|ec|egi|emi|end-chain|end|eos|expands|final|f|heading|intermediate|left|less|limits|limit|modules|multiple|negative|new|padding|password|pf|ph|postive|printer|processing|program-id|property|queue|recording|removal|rerun|reserve|reset|reserved|rewind|rf|rh|rounding|run|same|segment-limit|segment|separate|sequence|source-computer|standard-1|standard-2|standard-decimal|static|object-computer|object)(?![0-9A-Za-z_-])",
+      "match": "(?<![-_])(?i:accept|add|address|allocate|cancel|close|cobol|commit|compute|continue|delete|disable|display|bell|divide|eject|enable|enter|evaluate|exhibit|named|exit|free|generate|go\\s+to|initialize\\sonly|initialize|initiate|inspect|merge|end-set|set|move|corresponding|corr|multiply|otherwise|open|sharing|sort-merge|purge|ready|read|kept|receive|release|return|rewrite|rounded|rollback|search|send|end-send|sort|collating\\s+sequence|collating|start|service|subtract|suppress|terminate|then|unlock|string|unstring|validate|write|next|sentence|apply|areas|area|at|bottom|cf|ch|code|cols|condition|controls|de|destination|detail|ec|egi|emi|end|eos|final|f|heading|intermediate|left|less|limits|limit|modules|multiple|negative|new|padding|password|pf|ph|postive|printer|processing|program-id|property|queue|recording|removal|rerun|reserve|reset|rewind|rf|rh|rounding|run|same|segment-limit|segment|separate|sequence|source-computer|standard-1|standard-2|standard-decimal|static|object-computer|object)(?![0-9A-Za-z_-])",
       "name": "keyword.verbs.gnucobol"
     },
     {
@@ -534,7 +521,7 @@
     },
     {
       "match": "(?<![-_])(?i:alter)(?=\\s|\\.)",
-      "name": "invalid.illegal.gnucobol"
+      "name": "invalid.deprecated.gnucobol"
     },
     {
       "match": "(?i:filler)",
@@ -549,7 +536,7 @@
       "name": "constant.numeric.integer"
     },
     {
-      "match": "(?<![-_])(?i:3-d|absent|action|active-x|actual|adjustable-columns|alignment|allowing|autoterminate|away-from-zero|background-colour|background-high|background-low|background-standard|bar|based|beep|binary-long-long|binary-sequential|bitmap-end|bitmap-handle|bitmap-number|bitmap-start|bitmap-timer|bitmap-trailing|bitmap-transparent-color|bitmap-width|box|boxed|bulk-addition|busy|buttons|byte-length|calendar-font|column-color|column-dividers|column-font|column-headings|column-protection|tab-to-add|tab-to-delete|tab|termination-value|threads|thumb-position|tiled-headings|time-out|timeout|title-position|title|toward-greater|toward-lesser|track|track-area|track-limit|tracks|traditional-font|trailing-shift|transform|transparent|tree-view|truncation|vertical|very-heavy|virtual-width|volatile|vpadding|vscroll|vscroll-bar|vscroll-pos|vtop|wait|web-browser|width|width-in-cells|wrap|write-verify|writers|yyyyddd|yyyymmdd|use-alt|use-return|use-tab|user|user-default|item-text|item-to-add|item-to-delete|item-to-empty|item-value|item|inquire|insert-rows|insertion-index|initialise|initialised|identified|ignore|ignoring|independent|hot-track|hscroll|hscroll-pos|heading-color|heading-divider-color|heading-font|heavy|height-in-cells|hidden-data|high-color|group-value|handle|has-children|graphical|greater|grid|go-back|go-forward|go-home|go-search|fixed|fixed-font|fixed-width|flat|flat-buttons|file-name|file-pos|fill-color|fill-color2|fill-percent|float-decimal-16|float-decimal-34|engraved|ensure-visible|entry-convention|entry-field|entry-reason|display-columns|display-format|divider-color|dividers|dotdash|dotted|drag-color|drop-down|drop-list|foreground-colour|forever|frame|framed|escape-button|escape|esi|equal|equals|erase|exception-value|exclusive|extended-search|extern|external-form|event|event-list|every|label-offset|large-font|large-offset|last-row|last|layout-data|leading-shift|leave|left-text|leftline|length-check|lower|lowered|lowlight|magnetic-tape|manual|mass-update|master-index|max-lines|max-progress|max-text|max-val|medium-font|memory|record-data|record-overflow|record-to-add|record-to-delete|refresh|region-color|reorg-criteria|reset-grid|reset-list|reset-tabs|right-align|rimmed|row-color|row-color-pattern|row-dividers|row-font|row-headings|row-protection|save-as-no-prompt|save-as|screen|scroll|scroll-bar|search-options|search-text|seconds|secure|select-all|selection-index|selection-text|self-act|argument-number|argument-value|attributes|auto-decimal|auto-spin|cell-color|cell-data|cell-font|cell-protection|cells|center|centered|centered-headings|century-date|classification|clear-selection|cline|clines|command-line|cursor-col|cursor-color|cursor-frame-width|cursor-row|cursor-x|cursor-y|custom-print-template|cycle|cyl-index|cyl-overflow|dashed|data-columns|data-types|date-entry|default-button|default-font|line-sequential|lines-at-root|list-box|lm-resize|loc|lock-holding|long-date|low-color|navigate-url|nearest-away-from-zero|nearest-even|nearest-toward-zero|no-auto-default|no-autosel|no-box|no-dividers|no-f4|no-focus|no-group-tab|no-key-letter|no-search|no-updown|nominal|nonnumeric|not|notab|nothing|notify|notify-change|notify-dblclick|notify-selchange|num-col-headings|numbers|number|only|or|organisation|others|other|overlap-left|overlap-top|overline|page-setup|paged|paragraph|parent|pascal|permanent|physical|pixel|pixels|placement|pop-up|pos|position-shift|positive|present|previous|print|print-no-prompt|default|protected|cursor|crt-under|colours|colors|check-box|and|ascii|binary-int|bitmap|cancel-button|capacity|card-punch|card-reader|cassette|ccol|changed|csize|destroy|disp|and|cell|color|combo-box|copy-selection|conversion|core-index|empty-check|encoding|encryption|expand|finish-reason|full-height|icon|keyboard|locale|message|min-val|minus|modify|multiline|namespace-prefix|namespace|nested|next-item|num-rows|ok-button|prohibited|progress|properties|push-button|query-index|radio-button|raised|read-only|readers|reread|symbolic|sync|shading|shadow|short-date|show-lines|show-none|show-sel-always|small-font|sort-order|spinner|square|standard-binary|start-x|start-y|static-list|status-bar|status-text|stdcall|strong|style|sub-queue-1|sub-queue-2|sub-queue-3|temporary|unbounded|unframed|unsorted|updaters|upper|validating|value-format|variable|synchronised|synchronized|system-offset|separation|system-default|system-info|s|table|terminal-info|test|text|than|top|trailing-sign|trailing|unit|validate|words|write-only|and|ebcdic|echo|element|end-color|end-modify|eol|equals|equal|fh--fcd|fh--keydef|file-id|intrinsic|file-limits|file-limit|print-preview|printer-1|priority|type|x|u|v|y)(?![0-9A-Za-z_-])",
+      "match": "(?<![-_])(?i:3-d|absent|action|active-x|actual|adjustable-columns|alignment|allowing|autoterminate|away-from-zero|background-colour|background-high|background-low|background-standard|bar|based|beep|binary-long-long|binary-sequential|bitmap-end|bitmap-handle|bitmap-number|bitmap-start|bitmap-timer|bitmap-trailing|bitmap-transparent-color|bitmap-width|box|boxed|bulk-addition|busy|buttons|byte-length|calendar-font|column-color|column-dividers|column-font|column-headings|column-protection|tab-to-add|tab-to-delete|tab|termination-value|threads|thumb-position|tiled-headings|time-out|timeout|title-position|title|toward-greater|toward-lesser|track|track-area|track-limit|tracks|traditional-font|trailing-shift|transform|transparent|tree-view|truncation|vertical|very-heavy|virtual-width|volatile|vpadding|vscroll|vscroll-bar|vscroll-pos|vtop|wait|web-browser|width|width-in-cells|wrap|write-verify|writers|yyyyddd|yyyymmdd|use-alt|use-return|use-tab|user|user-default|item-text|item-to-add|item-to-delete|item-to-empty|item-value|item|inquire|insert-rows|insertion-index|initialise|initialised|identified|ignore|ignoring|independent|hot-track|hscroll|hscroll-pos|heading-color|heading-divider-color|heading-font|heavy|height-in-cells|hidden-data|high-color|group-value|handle|has-children|graphical|greater|grid|go-back|go-forward|go-home|go-search|fixed|fixed-font|fixed-width|flat|flat-buttons|file-name|file-pos|fill-color|fill-color2|fill-percent|float-decimal-16|float-decimal-34|engraved|ensure-visible|entry-convention|entry-field|entry-reason|display-columns|display-format|divider-color|dividers|dotdash|dotted|drag-color|drop-down|drop-list|foreground-colour|forever|frame|framed|escape-button|escape|esi|equal|equals|erase|exception-value|exclusive|extended-search|extern|external-form|event|event-list|every|label-offset|large-font|large-offset|last-row|last|layout-data|leading-shift|leave|left-text|leftline|length-check|lower|lowered|lowlight|magnetic-tape|manual|mass-update|master-index|max-lines|max-progress|max-text|max-val|medium-font|memory|record-data|record-overflow|record-to-add|record-to-delete|refresh|region-color|reorg-criteria|reset-grid|reset-list|reset-tabs|right-align|rimmed|row-color|row-color-pattern|row-dividers|row-font|row-headings|row-protection|save-as-no-prompt|save-as|screen|scroll|scroll-bar|search-options|search-text|seconds|secure|select-all|selection-index|selection-text|self-act|argument-number|argument-value|attributes|auto-decimal|auto-spin|cell-color|cell-data|cell-font|cell-protection|cells|center|centered|centered-headings|century-date|classification|clear-selection|cline|clines|command-line|cursor-col|cursor-color|cursor-frame-width|cursor-row|cursor-x|cursor-y|custom-print-template|cycle|cyl-index|cyl-overflow|dashed|data-columns|data-types|date-entry|default-button|default-font|line-sequential|lines-at-root|list-box|lm-resize|loc|lock-holding|long-date|low-color|navigate-url|nearest-away-from-zero|nearest-even|nearest-toward-zero|no-auto-default|no-autosel|no-box|no-dividers|no-f4|no-focus|no-group-tab|no-key-letter|no-search|no-updown|nominal|nonnumeric|not|notab|nothing|notify|notify-change|notify-dblclick|notify-selchange|num-col-headings|numbers|number|only|or|organisation|others|other|overlap-left|overlap-top|overline|page-setup|paged|paragraph|parent|pascal|permanent|physical|pixel|pixels|placement|pop-up|pos|position-shift|positive|present|previous|print|print-no-prompt|default|protected|cursor|crt-under|colours|colors|check-box|and|ascii|binary-int|bitmap|cancel-button|capacity|card-punch|card-reader|cassette|ccol|changed|csize|destroy|disp|and|cell|color|combo-box|copy-selection|conversion|core-index|empty-check|encoding|encryption|expand|finish-reason|full-height|icon|keyboard|locale|message|min-val|minus|modify|multiline|namespace-prefix|namespace|nested|next-item|num-rows|ok-button|prohibited|progress|properties|push-button|query-index|radio-button|raised|read-only|readers|reread|symbolic|sync|shading|shadow|short-date|show-lines|show-none|show-sel-always|small-font|sort-order|spinner|square|standard-binary|start-x|start-y|static-list|status-bar|status-text|stdcall|strong|style|sub-queue-1|sub-queue-2|sub-queue-3|temporary|unbounded|unframed|unsorted|updaters|upper|validating|value-format|variable|synchronised|synchronized|system-offset|separation|system-default|system-info|s|table|terminal-info|test|text|than|top|trailing|unit|validate|words|write-only|and|ebcdic|echo|element|end-color|end-modify|eol|equals|equal|fh--fcd|fh--keydef|file-id|intrinsic|file-limits|file-limit|print-preview|printer-1|priority|type|x|u|v|y)(?![0-9A-Za-z_-])",
       "name": "keyword.gnucobol"
     },
     {
