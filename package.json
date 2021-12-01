@@ -10,7 +10,7 @@
     "keywords": [
         "GnuCOBOL"
     ],
-    "version": "0.8.0",
+    "version": "0.8.1",
     "publisher": "bitlang",
     "engines": {
         "vscode": "^1.60.0"
@@ -227,7 +227,6 @@
 	"find-deadcode": "./node_modules/.bin/ts-prune | grep -v \"used in module\""
     },
     "dependencies": {
-        "ts-prune": "^0.10.1",
         "typescript-string-operations": "^1.4.1"
     },
     "devDependencies": {
@@ -242,6 +241,7 @@
         "mocha": "^9.1.1",
         "typescript": "^4.4.2",
         "vsce": "^1.99.0",
-        "vscode-test": "^1.6.1"
+        "vscode-test": "^1.6.1",
+        "ts-prune": "^0.10.1"
     }
 }
