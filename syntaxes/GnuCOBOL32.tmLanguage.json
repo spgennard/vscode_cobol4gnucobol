@@ -1,0 +1,22 @@
+When 3.2 is released/present in distros.. this is a reasonable start
+ - add switch for dynamic choice or think about using "cob -V"...
+{
+  "_copyright": "The MIT License (MIT)\nCopyright (c) 2015-2021 spgennard\nSource: https://github.com/spgennard/vscode_cobol4gnucobol/blob/main/syntaxes/GnuCOBOL32.tmLanguage.json",
+  "$schema": "https://raw.githubusercontent.com/spgennard/vscode_cobol/main/schemas/tmlanguage.json",
+  "fileTypes": [],
+  "name": "GnuCOBOL32",
+  "patterns": [
+    {
+      "match": "(\\s+|^)(?i:AUTHOR|B-SHIFT-L|B-SHIFT-LC|B-SHIFT-R|B-SHIFT-RC|BACKWARD|DATE-COMPILED|DATE-MODIFIED|DATE-WRITTEN|END-SEND|EXCLUSIVE-OR|FINALLY|HEX|INSTALLATION|PROTOTYPE|RAISING|RECEIVED|REMARKS|SECURITY)(?![0-9A-Za-z_-])",
+      "name": "keyword.gnucobol32"
+    },
+    {
+      "match": "(\\s+|^)(?i:ACTIVATING|ANUM|BYTES|BYTE|CURRENT|EDITING|LOCATION|MESSAGE-TAG|NAT|STACK|TOP-LEVEL|XOR)(?=\\s+|\\.|,|\\))",
+      "name": "invalid.illegal.gnucobol32"
+    },
+    {
+      "include": "source.gnucobol"
+    }
+  ],
+  "scopeName": "source.gnucobol32"
+}
