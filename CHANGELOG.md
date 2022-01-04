@@ -1,6 +1,6 @@
 # CHANGELOG
 
-* 61b1d2f (HEAD -> main, tag: 0.8.2, origin/main, origin/HEAD) Update CHANGELOG.md
+* 61b1d2f (tag: 0.8.2) Update CHANGELOG.md
 * 62a5b1c update
 * 6bfc7f2 Update CHANGELOG.md
 * 58c9350 (tag: 0.8.1) Update CHANGELOG.md
