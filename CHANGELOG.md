@@ -1,6 +1,8 @@
 # CHANGELOG
 
-* a7f639b (HEAD -> main, tag: 0.8.4, origin/main, origin/HEAD) bump
+* 2ea92c0 (HEAD -> main, tag: 0.8.5) bump
+* 7fae240 (origin/main, origin/HEAD) Update CHANGELOG.md
+* a7f639b (tag: 0.8.4) bump
 * 6a6675a just incase
 * 728ba9c (tag: 0.8.3) Update CHANGELOG.md
 * 479fb1c bump
