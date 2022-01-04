@@ -1,4 +1,5 @@
 # exit on error
+set -e
 PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
 
 echo "# CHANGELOG" >CHANGELOG.md
