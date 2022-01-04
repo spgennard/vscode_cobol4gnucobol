@@ -10,7 +10,7 @@
     "keywords": [
         "GnuCOBOL"
     ],
-    "version": "0.8.2",
+    "version": "0.8.3",
     "publisher": "bitlang",
     "engines": {
         "vscode": "^1.60.0"
