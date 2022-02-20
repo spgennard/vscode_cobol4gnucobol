@@ -20,8 +20,7 @@ export interface IExternalFeatures {
 export enum ESourceFormat {
     unknown = "unknown",
     fixed = "fixed",
-    free = "free",
-    variable = "variable"
+    free = "free"
 }
 
 export class EmptyExternalFeature implements IExternalFeatures {

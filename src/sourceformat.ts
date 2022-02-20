@@ -63,7 +63,7 @@ export function getCOBOLSourceFormat(doc: ISourceHandler): ESourceFormat {
         if (defFormat === ESourceFormat.unknown) {
             const newcommentPos = line.indexOf("*>");
             if (newcommentPos !== -1 && defFormat === ESourceFormat.unknown) {
-                defFormat = ESourceFormat.variable;
+                defFormat = ESourceFormat.unknown;
             }
         }
 
@@ -79,7 +79,7 @@ export function getCOBOLSourceFormat(doc: ISourceHandler): ESourceFormat {
         // does it contain a inline comments? no
         if (pos4sourceformat_after === 0) {
             if (line.length > 80) {
-                defFormat = ESourceFormat.variable;
+                defFormat = ESourceFormat.free;
                 linesGT80++;
                 continue;
             } else {
@@ -99,7 +99,7 @@ export function getCOBOLSourceFormat(doc: ISourceHandler): ESourceFormat {
                     }
                 } else {
                     // if we cannot be sure, then let the default be variable
-                    defFormat = ESourceFormat.variable;
+                    defFormat = ESourceFormat.free;
                 }
             }
             continue;
@@ -109,9 +109,6 @@ export function getCOBOLSourceFormat(doc: ISourceHandler): ESourceFormat {
 
             if (line2right.indexOf("fixed") !== -1) {
                 return ESourceFormat.fixed;
-            }
-            if (line2right.indexOf("variable") !== -1) {
-                return ESourceFormat.variable;
             }
             if (line2right.indexOf("free") !== -1) {
                 return ESourceFormat.free;

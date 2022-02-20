@@ -572,7 +572,6 @@ export interface ICOBOLSourceScanner {
     filename: string;
     lastModifiedTime: BigInt;
     copyBooksUsed: Map<string, COBOLCopybookToken>;
-    // tokensInOrder: COBOLToken[];
     deprecatedCacheDirectory: string;
     workspaceFile: COBOLWorkspaceFile;
 }
@@ -885,8 +884,6 @@ export default class COBOLSourceScanner implements ICommentCallback, ICOBOLSourc
         this.sourceFormat = this.externalFeatures.getCOBOLSourceFormat(sourceHandler);
         switch (this.sourceFormat) {
             case ESourceFormat.free: sourceHandler.setDumpAreaBOnwards(false);
-                break;
-            case ESourceFormat.variable: sourceHandler.setDumpAreaBOnwards(false);
                 break;
             case ESourceFormat.fixed:
                 sourceHandler.setDumpAreaA(true);
