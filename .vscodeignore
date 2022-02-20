@@ -9,7 +9,6 @@
 .vscode_cobol/
 vsc-extension-quickstart.md
 node_modules/
-out/
 src/
 gen_changelog.sh
 publishit2gitonly.sh
