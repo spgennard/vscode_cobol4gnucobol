@@ -1,5 +1,6 @@
 # CHANGELOG
 
+* 449fa22 (HEAD -> main, tag: 0.8.7, origin/main) Update
 * 7318264 tweak
 * 7e2dbfa bump
 * 2f39028 minor update, minor bump
