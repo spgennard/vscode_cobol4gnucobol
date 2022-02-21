@@ -1,5 +1,6 @@
 # exit on error
 set -e
+set -x
 PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
 
 ./gen_changelog.sh
