@@ -1,6 +1,7 @@
 # CHANGELOG
 
-* e5a18fc (HEAD -> main, tag: 0.8.7, origin/main) Update
+* 839785a (HEAD -> main, tag: 0.8.7, origin/main) Update
+* e5a18fc Update
 * 449fa22 Update
 * 7318264 tweak
 * e60a717 remove variable source format, as this is micro focus feature
