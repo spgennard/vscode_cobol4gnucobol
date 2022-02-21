@@ -1,34 +1,20 @@
 # CHANGELOG
 
-* 4e13955 (tag: 0.8.7) Update CHANGELOG.md
-* 556eb41 Update CHANGELOG.md
-* 9660c79 Update CHANGELOG.md
+* 7318264 tweak
 * 7e2dbfa bump
-* 3a5908a (tag: 0.8.6) Update CHANGELOG.md
 * 2f39028 minor update, minor bump
 * e60a717 remove variable source format, as this is micro focus feature
 * 441bad5 minor update
 * 45108f0 update
 * c0b3e3a split syntax into different langs for different versions
 * 3a8777a update
-* ac45686 Update CHANGELOG.md
 * 2ea92c0 (tag: 0.8.5) bump
-* 7fae240 Update CHANGELOG.md
 * a7f639b (tag: 0.8.4) bump
 * 6a6675a just incase
-* 728ba9c (tag: 0.8.3) Update CHANGELOG.md
 * 479fb1c bump
-* 2f4380e (tag: 0.8.2) Update CHANGELOG.md
-* e9427f3 Update CHANGELOG.md
-* 42ad605 Update CHANGELOG.md
-* 61b1d2f Update CHANGELOG.md
 * 62a5b1c update
-* 6bfc7f2 (tag: 0.8.1) Update CHANGELOG.md
-* 58c9350 Update CHANGELOG.md
 * 287f2dc bump
-* cae2b80 (tag: 0.8.0) Update CHANGELOG.md
 * 03291ba bump
-* 19a41ae (tag: 0.7.8) Update CHANGELOG.md
 * 6814ae5 add webpack
 * 5d817c4 introduce versioned lang
 * f6b64f3 update README.md
@@ -56,18 +42,12 @@
 * 92ad3b6 add simple support for constant's
 * f65a958 Unimplemented features are not considered as some items can still be used as variables - #7
 * 183cb47 remove unsed option
-* 8199d52 (tag: 0.7.7) Update CHANGELOG.md
 * cb46373 add sourcedef provider
-* 754a773 (tag: 0.7.6) Update CHANGELOG.md
 * 713e623 bump
 * 0ec40b8 update syntax
-* f403b25 (tag: 0.7.5) Update CHANGELOG.md
 * 4761fbe bump
-* d43607f (tag: 0.7.4) Update CHANGELOG.md
 * 57d2cdd fix release problem
-* 25971aa (tag: 0.7.2) Update CHANGELOG.md
 * 2b9c528 Remove acu items Remove duplicates Ensure entries include right terminators
-* 988ff5c (tag: 0.7.1) Update CHANGELOG.md
 * e8e450b update
 * 1f59075 notify use of extensions that may conflict with this extension
 * 334a0f7 (tag: 0.7.0) add outline view
@@ -79,7 +59,6 @@
 * cf16aac (tag: 0.5.0) bump
 * 405545a vscode engine now gives multiple error messages if a command is defined but is not present, so this ends the idea of being able to "soft" consume commands from other extensions
 * 44ff85e (tag: 0.4.0) merge syntax files
-* 11b9a2b (tag: 0.3.0) Update CHANGELOG.md
 * 5a48498 remove prefer_gnucobol_syntax
 * 3408bec (tag: 0.2.0) update for trusted workspace
 * 76ed022 upd
@@ -100,9 +79,7 @@
 * 37bf375 fill out more of package.json
 * 3cb3aac Set theme jekyll-theme-minimal
 * c311102 (tag: 0.0.6) okay, nearly ready
-* 511d6a1 Update CHANGELOG.md
 * 645e954 bump version
-* 8e34f90 Update CHANGELOG.md
 * 9f5f27b tweak
 * f378c23 try toref
 * 5236164 test
