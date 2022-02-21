@@ -1,21 +1,11 @@
 # CHANGELOG
 
-* 449fa22 (HEAD -> main, tag: 0.8.7, origin/main) Update
+* e5a18fc (HEAD -> main, tag: 0.8.7, origin/main) Update
+* 449fa22 Update
 * 7318264 tweak
-* 7e2dbfa bump
-* 2f39028 minor update, minor bump
 * e60a717 remove variable source format, as this is micro focus feature
-* 441bad5 minor update
-* 45108f0 update
 * c0b3e3a split syntax into different langs for different versions
-* 3a8777a update
-* 2ea92c0 (tag: 0.8.5) bump
-* a7f639b (tag: 0.8.4) bump
 * 6a6675a just incase
-* 479fb1c bump
-* 62a5b1c update
-* 287f2dc bump
-* 03291ba bump
 * 6814ae5 add webpack
 * 5d817c4 introduce versioned lang
 * f6b64f3 update README.md
@@ -44,20 +34,14 @@
 * f65a958 Unimplemented features are not considered as some items can still be used as variables - #7
 * 183cb47 remove unsed option
 * cb46373 add sourcedef provider
-* 713e623 bump
 * 0ec40b8 update syntax
-* 4761fbe bump
 * 57d2cdd fix release problem
 * 2b9c528 Remove acu items Remove duplicates Ensure entries include right terminators
-* e8e450b update
 * 1f59075 notify use of extensions that may conflict with this extension
 * 334a0f7 (tag: 0.7.0) add outline view
-* 29d096b bump
 * aa4eaf4 update engine
 * 3289413 add flip code back in
-* 998fbf6 update
 * 01188e0 update lock
-* cf16aac (tag: 0.5.0) bump
 * 405545a vscode engine now gives multiple error messages if a command is defined but is not present, so this ends the idea of being able to "soft" consume commands from other extensions
 * 44ff85e (tag: 0.4.0) merge syntax files
 * 5a48498 remove prefer_gnucobol_syntax
@@ -68,7 +52,6 @@
 * 485ed33 (tag: 0.1.3) tweak
 * d81c845 add icon
 * 8eca0a2 (tag: 0.1.2) add a basic symbol provider to help with navigation
-* 6230034 (tag: 0.1.1) update
 * 906092f (tag: 0.1.0) bring forward the listing file support
 * b1f1cfa enable keybindings/menus if bitlang.cobol is present
 * be7d657 add laucher
@@ -80,7 +63,6 @@
 * 37bf375 fill out more of package.json
 * 3cb3aac Set theme jekyll-theme-minimal
 * c311102 (tag: 0.0.6) okay, nearly ready
-* 645e954 bump version
 * 9f5f27b tweak
 * f378c23 try toref
 * 5236164 test
@@ -90,12 +72,8 @@
 * 929f3ac remove dependancy on bitlang.cobol, allowing any extension that provides a COBOL language to work with it.
 * 3973eba update readme
 * 420bd03 include MIT license
-* fca58c4 update
-* 1257c2f bump
 * 7028dc6 remove opencobol support, as it is superceeded by the GnuCOBOL support
 * b8ad8b6 cleanup
-* 6bad8d3 update
-* 97a5bd9 bump
 * a5defff bring forward the gnucobol syntax
 * 02df061 initial files
 * ca23b79 first item
