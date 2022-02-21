@@ -1,6 +1,7 @@
 # CHANGELOG
 
-* 556eb41 (HEAD -> main, tag: 0.8.7, origin/main) Update CHANGELOG.md
+* 4e13955 (tag: 0.8.7) Update CHANGELOG.md
+* 556eb41 Update CHANGELOG.md
 * 9660c79 Update CHANGELOG.md
 * 7e2dbfa bump
 * 3a5908a (tag: 0.8.6) Update CHANGELOG.md
