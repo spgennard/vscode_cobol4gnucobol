@@ -5,10 +5,6 @@ PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
 
 ./gen_changelog.sh
 
-git commit -m "Update CHANGELOG.md" CHANGELOG.md && true
-git push
-git tag -f $PACKAGE_VERSION
-git push --tags --force
 rm -f *.vsix
 vsce publish
 vsce package

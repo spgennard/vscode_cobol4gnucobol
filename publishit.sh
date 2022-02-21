@@ -6,8 +6,6 @@ git tag -f $PACKAGE_VERSION
 git push --tags --force
 
 ./gen_changelog.sh
-git commit -m "Update CHANGELOG.md" CHANGELOG.md && true
-git push
 
 git clean -fdx
 npm install
