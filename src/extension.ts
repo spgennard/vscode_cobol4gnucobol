@@ -19,7 +19,9 @@ export function logMessage(message: string, ...parameters: any[]): void {
 
 const gnuCOBOLSpecific: string[] = [
 	">>SOURCE FORMAT",
+	">> SOURCE FORMAT",
 	">>SET SOURCEFORMAT",
+	">> SET SOURCEFORMAT",
 	"CBL_GC_FORK",
 	"CBL_GC_GETOPT",
 	"CBL_GC_HOSTED",
@@ -29,6 +31,7 @@ const gnuCOBOLSpecific: string[] = [
 	"CBL_OC_HOSTED",
 	"CBL_OC_NANOSLEEP",
 	"CBL_OC_CTK",
+	"GNU COBOL",
 	"GNUCOBOL", 				// constant
 	"OPENCOBOL",				// constant
 	"COB_SCREEN_EXCEPTIONS",

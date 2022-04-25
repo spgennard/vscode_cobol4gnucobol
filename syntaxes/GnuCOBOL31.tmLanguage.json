@@ -10,7 +10,7 @@
   "name": "GnuCOBOL31",
   "patterns": [
     {
-      "match": "(?:^|\\s)(?i:.*>>SOURCE)(?:$|\\s.*$)",
+      "match": "(?:^|\\s)(?i:.*>>\\s*SOURCE)(?:$|\\s.*$)",
       "name": "comment.line.set.gnucobol"
     },
     {
