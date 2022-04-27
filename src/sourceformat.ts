@@ -26,6 +26,7 @@ function isValidFixedLine(line: string): boolean {
 }
 
 
+const undocumented_feature = false;
 
 export function getCOBOLSourceFormat(doc: ISourceHandler): ESourceFormat {
     const langid = doc.getLanguageId();
@@ -112,6 +113,9 @@ export function getCOBOLSourceFormat(doc: ISourceHandler): ESourceFormat {
             }
             if (line2right.indexOf("free") !== -1) {
                 return ESourceFormat.free;
+            }
+            if (undocumented_feature && line2right.indexOf("variable") !== -1) {
+                return ESourceFormat.variable;
             }
         }
     }

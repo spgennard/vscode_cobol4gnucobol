@@ -46,6 +46,7 @@ export async function updateDecorations(activeTextEditor: TextEditor | undefined
     // use the known file format from the scan itself
     switch (sf) {
         case ESourceFormat.free:
+        case ESourceFormat.variable:
         case ESourceFormat.unknown:
             activeTextEditor.setDecorations(trailingSpacesDecoration, decorationOptions);
             return;

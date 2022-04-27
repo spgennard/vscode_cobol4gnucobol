@@ -885,6 +885,8 @@ export default class COBOLSourceScanner implements ICommentCallback, ICOBOLSourc
         switch (this.sourceFormat) {
             case ESourceFormat.free: sourceHandler.setDumpAreaBOnwards(false);
                 break;
+            case ESourceFormat.variable: sourceHandler.setDumpAreaBOnwards(false);
+                break;
             case ESourceFormat.fixed:
                 sourceHandler.setDumpAreaA(true);
                 sourceHandler.setDumpAreaBOnwards(true);
