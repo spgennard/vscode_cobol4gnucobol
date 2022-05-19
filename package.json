@@ -10,7 +10,7 @@
     "keywords": [
         "GnuCOBOL"
     ],
-    "version": "0.8.7",
+    "version": "0.8.8",
     "publisher": "bitlang",
     "engines": {
         "vscode": "^1.64.1"
@@ -80,7 +80,7 @@
                 "language": "GnuCOBOL31",
                 "path": "./syntaxes/GnuCOBOL31.tmLanguage.json",
                 "scopeName": "source.gnucobol31"
-            },            
+            },
             {
                 "language": "GnuCOBOL",
                 "path": "./syntaxes/GnuCOBOL.tmLanguage.json",
@@ -224,10 +224,10 @@
         "test": "node ./out/test/runTest.js",
         "lint": "eslint . --ext .ts,.tsx",
         "watch": "tsc -watch -p ./",
-	"find-deadcode": "./node_modules/.bin/ts-prune | grep -v \"used in module\""
+        "find-deadcode": "./node_modules/.bin/ts-prune | grep -v \"used in module\""
     },
     "dependencies": {
-        "typescript-string-operations": "^1.4.1"
+        "ts-loader": "^9.3.0"
     },
     "devDependencies": {
         "@types/glob": "^7.2.0",
@@ -239,9 +239,10 @@
         "eslint": "^8.9.0",
         "glob": "^7.2.0",
         "mocha": "^9.2.1",
+        "ts-prune": "^0.10.3",
         "typescript": "^4.5.5",
         "vsce": "^2.6.7",
         "vscode-test": "^1.6.1",
-        "ts-prune": "^0.10.3"
+        "webpack-cli": "^4.9.2"
     }
 }

@@ -1,9 +1,9 @@
-import { StringBuilder } from "typescript-string-operations";
 import * as vscode from "vscode";
 import { workspace } from "vscode";
 import ISourceHandler, { ICommentCallback } from "./isourcehandler";
 import { cobolKeywordDictionary } from "./gnuCobolKeywords";
 import { VSCOBOLFileUtils } from "./vsfileutils";
+import { SimpleStringBuilder } from "./stringutils";
 
 export class VSCodeSourceHandler implements ISourceHandler {
     commentCount: number;
@@ -133,7 +133,7 @@ export class VSCodeSourceHandler implements ISourceHandler {
         const tabSize = editorConfig === undefined ? 4 : editorConfig.get<number>("tabSize", 4);
 
         let col = 0;
-        const buf = new StringBuilder();
+        const buf = new SimpleStringBuilder();
         for (const c of unexpandedLine) {
             if (c === "\t") {
                 do {
