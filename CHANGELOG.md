@@ -1,6 +1,11 @@
 # CHANGELOG
 
-* 839785a (HEAD -> main, tag: 0.8.7, origin/main) Update
+* 47af4ac (HEAD -> main, tag: 0.8.8, origin/main) tweak
+* 9ebd47b avoid using module with webpack
+* fc79330 add "undocumented" variable ready to be enabled whenever it gets documented, tested and supported
+* 7e329d9 tweak syntax for ">> SOURCE" and add a couple more trigger keywords
+* dd47554 (tag: 0.8.7) Update
+* 839785a Update
 * e5a18fc Update
 * 449fa22 Update
 * 7318264 tweak
