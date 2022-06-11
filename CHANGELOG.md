@@ -1,6 +1,8 @@
 # CHANGELOG
 
-* 47af4ac (HEAD -> main, tag: 0.8.8, origin/main) tweak
+* 3267b45 drop quotes from brackets config fix #14
+* c9f4b8d (tag: 0.8.8) Update
+* 47af4ac tweak
 * 9ebd47b avoid using module with webpack
 * fc79330 add "undocumented" variable ready to be enabled whenever it gets documented, tested and supported
 * 7e329d9 tweak syntax for ">> SOURCE" and add a couple more trigger keywords
