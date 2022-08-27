@@ -1,5 +1,6 @@
 # CHANGELOG
 
+* 1064093 (tag: 0.9.0) Update
 * 3ceb24a To quote: as `COB_SCREEN_ESC` is only active with `COB_SCREEN_EXCEPTIONS` this line may be dropped
 * 0f91bf3 (tag: 0.8.9) Update
 * 0448e42 lower
