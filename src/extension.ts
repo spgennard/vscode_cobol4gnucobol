@@ -35,7 +35,7 @@ const gnuCOBOLSpecific: string[] = [
 	"GNUCOBOL", 				// constant
 	"OPENCOBOL",				// constant
 	"COB_SCREEN_EXCEPTIONS",
-	"COB_SCREEN_EXCEPTIONS",
+	"COB_SCREEN_ESC",
 	"FUNCTION CONCATENATE",
 	"COBC"
 ];
