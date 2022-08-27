@@ -1,6 +1,8 @@
 # CHANGELOG
 
-* 0448e42 (HEAD -> main, tag: 0.8.9, origin/main) lower
+* 3ceb24a To quote: as `COB_SCREEN_ESC` is only active with `COB_SCREEN_EXCEPTIONS` this line may be dropped
+* 0f91bf3 (tag: 0.8.9) Update
+* 0448e42 lower
 * 7730681 Update
 * 3267b45 drop quotes from brackets config fix #14
 * c9f4b8d (tag: 0.8.8) Update
