@@ -17,6 +17,7 @@ export function logMessage(message: string, ...parameters: any[]): void {
 	}
 }
 
+//assumes an exact match
 const gnuCOBOLSpecific: string[] = [
 	">>SOURCE FORMAT",
 	">> SOURCE FORMAT",
@@ -43,13 +44,12 @@ const gnuCOBOLSpecific: string[] = [
 function isSourceGnuCOBOL(doc: TextDocument): boolean {
 	// never want to stop the open... so ensure it always works
 	try {
-		const maxLines = doc.lineCount < 128 ? doc.lineCount : 128;
+		const maxLines = doc.lineCount < 1024 ? doc.lineCount : 1024;
 
 		for (let lineCount = 0; lineCount < maxLines; lineCount++) {
 			const line = doc.lineAt(lineCount).text;
-			const lineUpper = line.toUpperCase();
 			for (const gnuItem of gnuCOBOLSpecific) {
-				if (lineUpper.indexOf(gnuItem) !== -1) {
+				if (line.indexOf(gnuItem) !== -1) {
 					return true;
 				}
 			}
