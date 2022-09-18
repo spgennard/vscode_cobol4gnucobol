@@ -137,7 +137,7 @@
             },
             {
                 "name": "gnucobol-warning-cobc",
-                "regexp": "^(.*): ?(\\d+): ([wW]arning|[wW]arnung|[wW]aarschuwing|[aA]lerta|avertissement|упозорење): ([^[]*)(\\[(.*)\\])?$",
+                "regexp": "^(.*):(\\d+):\\s?([wW]arning|[wW]arnung|[wW]aarschuwing|[aA]lerta|avertissement|упозорење)\\s?:([^[]*)(\\[(.*)\\])?$",
                 "file": 1,
                 "line": 2,
                 "message": 4,
@@ -145,7 +145,7 @@
             },
             {
                 "name": "gnucobol-error-cobc",
-                "regexp": "^(.*): ?(\\d+): *([eE]rror|[fF]ehler|[fF]out||[eE]rrores|[eE]rrores|erreur|грешка): ([^[]*)(\\[(.*)\\])?$",
+                "regexp": "^(.*): ?(\\d+):\\s?([eE]rror|[fF]ehler|[fF]out|[eE]rrores|[eE]rrores|erreur|грешка)\\s?:\\s?([^[]*)(\\[(.*)\\])?$",
                 "file": 1,
                 "line": 2,
                 "message": 4,
