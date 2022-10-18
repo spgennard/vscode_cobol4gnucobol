@@ -1,5 +1,6 @@
 # CHANGELOG
 
+* 010363e (tag: 0.9.2) Update
 * 681d966 Update
 * 5f01db0 tweak
 * 8954319 (tag: 0.9.1) Update
