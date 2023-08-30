@@ -7,6 +7,9 @@ git push --tags --force
 
 ./gen_changelog.sh
 
+echo Updating
+
+[ -d ".vscode_test" ] && cp -r .vscode-test ..
 git clean -fdx
 npm install
 git push
@@ -14,6 +17,9 @@ git push
 vsce publish
 #npm run afterpublish
 rm -f *.vsix
+
+mkdir .vscode-test 2>/dev/null && true
+[ -d "../.vscode_test" ] && cp -r ../.vscode-test .
 
 npm-check-updates
 
