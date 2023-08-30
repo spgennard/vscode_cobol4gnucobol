@@ -1,7 +1,8 @@
 # CHANGELOG
 
 
-## 0.9.4, origin/main, origin/HEAD update for mac
+## 0.9.4, origin/main, origin/HEAD 
+* 68913e8 update for mac
 
 ## 0.9.3 
 
