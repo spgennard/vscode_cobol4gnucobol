@@ -5,7 +5,7 @@
   "name": "GnuCOBOL",
   "patterns": [
     {
-      "include": "source.gnucobol31"
+      "include": "source.gnucobol32"
     }
   ],
   "scopeName": "source.gnucobol"
