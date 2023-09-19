@@ -205,6 +205,22 @@
       "name": "meta.symbol.cobol.forced"
     },
     {
+      "begin": "((?<![-_a-zA-Z0-9()-])(?i:source-computer)(\\.|$))",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.identifiers.gnucobol"
+        }
+      },
+      "patterns": [
+        {
+          "match": "(^[0-9 ][0-9 ][0-9 ][0-9 ][0-9 ][0-9 ])",
+          "name": "constant.numeric.gnucobol"
+        }
+      ],
+      "name": "comment.block.gnucobol.remark",
+      "end": "(?=((?<![-_])(?i:remarks|author|date-written|with|debugging\\s+mode|object-computer|installation|date-compiled|special-names|security|environment\\s+division|data\\s+division|working-storage\\s+section|input-output\\s+section|linkage\\s+section|procedure\\s+division|local-storage\\s+section)|^[ \\*][ \\*][ \\*][ \\*][ \\*][ \\*]\\*.*$|^\\+$))"
+    },
+    {
       "begin": "((?<![-_a-zA-Z0-9()-])(?i:author|source-computer|object-computer|date-written|security|date-compiled|date-modified)(\\.|$))",
       "beginCaptures": {
         "0": {
