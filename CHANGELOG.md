@@ -1,7 +1,11 @@
 # CHANGELOG
 
 
-## 0.9.4, origin/main, origin/HEAD 
+## 0.9.5, origin/main, origin/HEAD DEBUGGING MODE is shown as comment - Issue Fix #17
+* 20654d0 flip to v3.2
+
+## 0.9.4 
+* 21940dc Update
 * 68913e8 update for mac
 
 ## 0.9.3 
