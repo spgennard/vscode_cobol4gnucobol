@@ -10,7 +10,7 @@
     "keywords": [
         "GnuCOBOL"
     ],
-    "version": "0.9.5",
+    "version": "0.9.6",
     "publisher": "bitlang",
     "engines": {
         "vscode": "^1.82.0"
@@ -43,6 +43,14 @@
                 "aliases": [
                     "GnuCOBOL31",
                     "gnucobol31"
+                ],
+                "configuration": "./gnucobol.configuration.json"
+            },
+            {
+                "id": "GnuCOBOL32",
+                "aliases": [
+                    "GnuCOBOL32",
+                    "gnucobol32"
                 ],
                 "configuration": "./gnucobol.configuration.json"
             },
@@ -80,6 +88,11 @@
                 "language": "GnuCOBOL31",
                 "path": "./syntaxes/GnuCOBOL31.tmLanguage.json",
                 "scopeName": "source.gnucobol31"
+            },
+            {
+                "language": "GnuCOBOL32",
+                "path": "./syntaxes/GnuCOBOL32.tmLanguage.json",
+                "scopeName": "source.gnucobol32"
             },
             {
                 "language": "GnuCOBOL",

@@ -1,5 +1,3 @@
-When 3.2 is released/present in distros.. this is a reasonable start
- - add switch for dynamic choice or think about using "cob -V"...
 {
   "_copyright": "The MIT License (MIT)\nCopyright (c) 2015-2021 spgennard\nSource: https://github.com/spgennard/vscode_cobol4gnucobol/blob/main/syntaxes/GnuCOBOL32.tmLanguage.json",
   "$schema": "https://raw.githubusercontent.com/spgennard/vscode_cobol/main/schemas/tmlanguage.json",
