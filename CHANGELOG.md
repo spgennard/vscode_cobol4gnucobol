@@ -1,7 +1,10 @@
 # CHANGELOG
 
 
-## 0.9.5, origin/main, origin/HEAD DEBUGGING MODE is shown as comment - Issue Fix #17
+## 0.9.6, origin/main, origin/HEAD fix #13
+
+## 0.9.5 
+* f342086 DEBUGGING MODE is shown as comment - Issue Fix #17
 * 20654d0 flip to v3.2
 
 ## 0.9.4 
