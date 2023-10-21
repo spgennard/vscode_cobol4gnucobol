@@ -26,7 +26,6 @@
     "activationEvents": [
         "onStartupFinished",
         "onFileSystem:file",
-        "onLanguage:GnuCOBOL",
         "onLanguage:gnucobol",
         "workspaceContains:**/*.cobol",
         "workspaceContains:**/*.cob",
@@ -39,17 +38,17 @@
         "configuration": {},
         "languages": [
             {
-                "id": "GnuCOBOL31",
+                "id": "GnuCOBOL3.1",
                 "aliases": [
-                    "GnuCOBOL31",
+                    "GnuCOBOL3.1",
                     "gnucobol31"
                 ],
                 "configuration": "./gnucobol.configuration.json"
             },
             {
-                "id": "GnuCOBOL32",
+                "id": "GnuCOBOL3.2",
                 "aliases": [
-                    "GnuCOBOL32",
+                    "GnuCOBOL3.2",
                     "gnucobol32"
                 ],
                 "configuration": "./gnucobol.configuration.json"
@@ -85,12 +84,12 @@
         ],
         "grammars": [
             {
-                "language": "GnuCOBOL31",
+                "language": "GnuCOBOL3.1",
                 "path": "./syntaxes/GnuCOBOL31.tmLanguage.json",
                 "scopeName": "source.gnucobol31"
             },
             {
-                "language": "GnuCOBOL32",
+                "language": "GnuCOBOL3.2",
                 "path": "./syntaxes/GnuCOBOL32.tmLanguage.json",
                 "scopeName": "source.gnucobol32"
             },

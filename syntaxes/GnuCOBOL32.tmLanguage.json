@@ -1,8 +1,8 @@
 {
-  "_copyright": "The MIT License (MIT)\nCopyright (c) 2015-2023 spgennard\nSource: https://github.com/spgennard/vscode_cobol4gnucobol/blob/main/syntaxes/GnuCOBOL32.tmLanguage.json",
+  "_copyright": "The MIT License (MIT)\nCopyright (c) 2015-2023 spgennard\nSource: https://github.com/spgennard/vscode_cobol4gnucobol/blob/main/syntaxes/GnuCOBOL3.2.tmLanguage.json",
   "$schema": "https://raw.githubusercontent.com/spgennard/vscode_cobol/main/schemas/tmlanguage.json",
   "fileTypes": [],
-  "name": "GnuCOBOL32",
+  "name": "GnuCOBOL3.2",
   "patterns": [
     {
       "match": "(\\s+|^)(?i:AUTHOR|B-SHIFT-L|B-SHIFT-LC|B-SHIFT-R|B-SHIFT-RC|BACKWARD|DATE-COMPILED|DATE-MODIFIED|DATE-WRITTEN|END-SEND|EXCLUSIVE-OR|FINALLY|HEX|INSTALLATION|PROTOTYPE|RAISING|RECEIVED|REMARKS|SECURITY)(?![0-9A-Za-z_-])",

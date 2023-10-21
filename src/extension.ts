@@ -64,8 +64,11 @@ function isSourceGnuCOBOL(doc: TextDocument): boolean {
 function flip_plaintext(doc: TextDocument) {
 
 	switch (doc.languageId) {
+		case "ACUCOBOL":
+		case "RMCOBOL":
 		case "COBOLIT":
 		case "COBOL":
+		case "BITLANG-COBOL":
 			if (isSourceGnuCOBOL(doc)) {
 				vscode.languages.setTextDocumentLanguage(doc, "GnuCOBOL");
 				return;
@@ -214,6 +217,8 @@ export function activate(context: vscode.ExtensionContext) {
 	COBOLOutputChannel.clear();
 	const cobolSelectors = [
 		{ scheme: "file", language: "GnuCOBOL" },
+		{ scheme: "file", language: "GnuCOBOL3.1" },
+		{ scheme: "file", language: "GnuCOBOL3.2" }
 	];
 	const onDidOpenTextDocumentHandler = workspace.onDidOpenTextDocument((doc) => {
 		flip_plaintext(doc);

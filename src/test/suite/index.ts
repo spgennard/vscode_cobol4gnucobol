@@ -1,7 +1,6 @@
 import * as path from 'path';
 import Mocha from 'mocha';
 import { glob } from "glob";
-import { Path } from "path-scurry";
 
 export async function run(): Promise<void> {
 	// Create the mocha test
@@ -12,7 +11,7 @@ export async function run(): Promise<void> {
 
 	const testsRoot = path.resolve(__dirname, '..');
 
-	let files = glob.sync("**/**.test.js", { cwd: testsRoot });
+	const files = glob.sync("**/**.test.js", { cwd: testsRoot });
 
 	return new Promise((c, e) => {
 

@@ -1,5 +1,5 @@
 {
-  "_copyright": "The MIT License (MIT)\nCopyright (c) 2015-2023 spgennard\nSource: https://github.com/spgennard/vscode_cobol/blob/master/syntaxes/GnuCOBOL31.tmLanguage.json",
+  "_copyright": "The MIT License (MIT)\nCopyright (c) 2015-2023 spgennard\nSource: https://github.com/spgennard/vscode_cobol/blob/master/syntaxes/GnuCOBOL3.1.tmLanguage.json",
   "fileTypes": [
     "cobol",
     "cbl",
@@ -7,7 +7,7 @@
     "copybook",
     "cobcopy",
     "cob"  ],
-  "name": "GnuCOBOL31",
+  "name": "GnuCOBOL3.1",
   "patterns": [
     {
       "match": "(?:^|\\s)(?i:.*>>\\s*SOURCE)(?:$|\\s.*$)",
