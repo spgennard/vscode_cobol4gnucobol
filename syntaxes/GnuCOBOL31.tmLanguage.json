@@ -501,7 +501,7 @@
       "name": "support.type.gnucobol"
     },
     {
-      "match": "(?<![-_])(?i:end-xml|processing.*procedure|xml\\sparse|xml|xml-information|xml-text|xml-schemal|xml-declaration)(?![0-9A-Za-z_-])",
+      "match": "(?<![-_])(?i:end-xml|processing.*procedure|xml\\sparse|xml|xml-information|xml-text|xml-schema|xml-declaration)(?![0-9A-Za-z_-])",
       "name": "keyword.xml.gnucobol"
     },
     {

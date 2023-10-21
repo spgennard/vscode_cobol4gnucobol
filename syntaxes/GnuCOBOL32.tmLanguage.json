@@ -5,6 +5,18 @@
   "name": "GnuCOBOL3.2",
   "patterns": [
     {
+      "match": "(?<![-_])(?i:comp-9|comp-10|comp-15)(?=\\s|\\.|\\))",
+      "name": "storage.type.picture.gnucobol32"
+    },
+    {
+      "match": "(?<![-_])(?i:BASECONVERT|BOOLEAN-OF-INTEGER|CONVERT|EXCEPTION-FILE-N|EXCEPTION-LOCATION-N|FIND-STRING|MODULE-NAME|STANDARD-COMPARE|TEST-NUMVAL-C)(?=\\s|\\.|\\(|\\))",
+      "name": "support.function.gnucobol32"
+    },
+    {
+      "match": "(?<![-_])(?i:S01|S02|S03|S04|S05|SWITCH-16|SWITCH-17|SWITCH-18|SWITCH-19|SWITCH-20|SWITCH-21|SWITCH-22|SWITCH-23|SWITCH-24|SWITCH-25|SWITCH-26|SWITCH-27|SWITCH-28|SWITCH-29|SWITCH-30|SWITCH-31|SWITCH-32|SWITCH-33|SWITCH-34|SWITCH-35|SWITCH-36|SYSPCH|SYSPUNCH|ALTERNATE-CONSOLE)(?![0-9A-Za-z_-])",
+      "name": "support.type.gnucobol"
+    },
+    {
       "match": "(\\s+|^)(?i:AUTHOR|B-SHIFT-L|B-SHIFT-LC|B-SHIFT-R|B-SHIFT-RC|BACKWARD|DATE-COMPILED|DATE-MODIFIED|DATE-WRITTEN|END-SEND|EXCLUSIVE-OR|FINALLY|HEX|INSTALLATION|PROTOTYPE|RAISING|RECEIVED|REMARKS|SECURITY)(?![0-9A-Za-z_-])",
       "name": "keyword.gnucobol32"
     },
