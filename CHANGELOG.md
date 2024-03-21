@@ -1,7 +1,8 @@
 # CHANGELOG
 
 
-## 0.9.9, origin/main dev: add notice
+## 0.9.9 
+* 6a115e8 dev: add notice
 * 9566ed8 add more stuff for gnucobol 3.2
 * 9bb308f add extra lang-id's, make internal lang id's more descriptive
 
