@@ -2,7 +2,9 @@
 
 --------------------------------------------------------------------------
 
-IMPORTANT: Time to move onto more active extension.
+IMPORTANT: This extension has been superceeded by another extension.
+
+Have a nice day
 
 --------------------------------------------------------------------------
 
